@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Medicijnen scanner</title>
 </head>
 
 <body>
-    <h1>Medicijn scanner</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="scanmeds" />
-        <button type="submit">upload</button>
-    </form>
+    <main>
+        <h1>Medicijn scanner</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="scanmeds" />
+            <button type="submit">scan de foto</button>
+        </form>
+    </main>
 </body>
 
 </html>
