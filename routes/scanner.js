@@ -1,11 +1,12 @@
 
 const imageToText = require('../modules/createWorker')
+const api = require('../modules/api')
 
 module.exports = async (req, res) => {
-    console.log(req);
     const image = `./uploads/${req.file.originalname}`
     const text = await imageToText(image);
-    console.log(image);
+    const meds = await api.getMedicineData(text)
+    console.log('scan',meds)
     
-    res.render('./pages/test', { text })
+    res.render('./pages/test', { text:text, meds:meds[0]})
 }

@@ -15,7 +15,17 @@ async function getMedicineName(value) {
     const medicine = stringSimilarity.findBestMatch(value, mediceneNames)
     return medicine.bestMatch
 }
+async function getMedicineData(value) {
+    const medicines = await fetch()
+    const medicineNames = medicines.map(medicine => medicine.name)
+    const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
+    // console.log(medicine)
+    const medicineData = medicines.filter(meds => meds.name == medicine.target)
+    console.log(medicineData)
+    return medicineData
+}
 
 module.exports = {
-    getMedicineName
+    getMedicineName,
+    getMedicineData
 }
