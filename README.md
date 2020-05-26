@@ -4,6 +4,13 @@ A powerfull webapplication that helps medicine user to gain the right informatio
 
 © [Joan Padolina](www.github.com/joanpadolina) & [Lien Vo](www.github.com/nlvo)
 
+## Introducion
+This project is sectioned in __three__ ways.
+
+1. Design Rationale // __[This Readme](https://github.com/joanpadolina/meesterproef-1920)__
+1. Product Biography // __[Joan Padolina](https://github.com/joanpadolina/meesterproef-1920/wiki)__
+1. Product Biography // __[Lien Vo](https://github.com/nlvo/meesterproef-1920/wiki)__
+
 ## Table of Contents
 
 1. [Installation](#installation)
