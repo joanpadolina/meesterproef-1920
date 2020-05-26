@@ -1,7 +1,3 @@
-const {
-	createWorker
-} = require('tesseract.js')
-
 const tesseract = require('node-tesseract-ocr');
 
 async function imageToText(image) {
