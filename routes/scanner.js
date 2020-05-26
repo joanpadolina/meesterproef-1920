@@ -8,5 +8,5 @@ module.exports = async (req, res) => {
     const meds = await api.getMedicineData(text)
     console.log('scan',meds)
     
-    res.render('./pages/test', { text:text, meds:meds[0]})
+    res.render('./pages/medicine', { text:text, meds:meds[0]})
 }
