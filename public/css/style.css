@@ -18,6 +18,8 @@
 }
 
 body {
+    margin:0;
+    padding:0;
     color: var(--grey-900);
     font-family: 'Inter', sans-serif;
 }
@@ -58,6 +60,22 @@ button {
     margin-top: 1em;
 }
 
+/* results page medicine */
+
+ul {
+    list-style-type: none;
+    position: relative;
+    display: block;
+    margin:0;
+    padding:0;
+}
+li {
+    font-weight: 100;
+    position: relative;
+}
+li span {
+    font-weight: 900;
+}
 @media screen and (min-width: 48em) {
     main {
         display: flex;

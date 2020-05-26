@@ -6,22 +6,23 @@ const upload = document.querySelector('.upload')
 const loader = document.querySelector('.loading-state')
 
 // full page load
-window.addEventListener('load', function(){
-    setTimeout(()=>{
+window.addEventListener('load', function () {
+    setTimeout(() => {
         loader.className += " hidden"
-    },2000)
+    }, 2000)
 })
 
 // upload button starts loading
 upload.addEventListener('click', () => {
-    setTimeout(()=>{
+    setTimeout(() => {
         loader.className += " show"
-    },1000)
+    }, 1000)
 
 })
 // animation end after content reveal
+
 medsSection.addEventListener('load', () => {
-    setTimeout(()=>{
+    setTimeout(() => {
         loader.className += " hidden"
-    },1000)
+    }, 500)
 })

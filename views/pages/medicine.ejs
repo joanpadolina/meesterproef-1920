@@ -1,24 +1,28 @@
-<%- include('../partials/head') %> 
-<%- include('../partials/header') %> 
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
 
 <main>
     <section class="meds-results">
-        <h2>Medicine</h2>
-        <p> <%= text %> </p>
-    
+        <h2>Resultaten</h2>
+        <div>
+            <span>gescande document</span>
+            <p> <%= text %> </p>
+        </div>
+
+        <h3>
+            <%= meds.name %>
+
+        </h3>
         <ul>
             <li>
-                <%= meds.name %>
+                Registratienummer: <span><%= meds.registrationNumber %></span>
             </li>
             <li>
-                <%= meds.registrationNumber %>
+                Actieve ingredienten: <span><%= meds.activeIngredient %></span>
             </li>
-            <li>
-                <%= meds.activeIngredient %>
-            </li>
-    
+
         </ul>
     </section>
 </main>
 
-<%- include('../partials/footer')  %> 
+<%- include('../partials/footer')  %>
