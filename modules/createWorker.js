@@ -1,23 +1,17 @@
-const {
-    createWorker
-} = require('tesseract.js')
-
-const worker = createWorker({
-    logger: m => console.log(m),
-})
+const tesseract = require('node-tesseract-ocr');
 
 async function imageToText(image) {
-    await worker.load()
-    await worker.loadLanguage('nld')
-    await worker.initialize('nld')
-    const {
-        data: {
-            text
-        }
-    } = await worker.recognize(image)
-    console.log(text, 'ds')
-    await worker.terminate()
-    return text
+	const config = {
+		lang: "eng",
+		oem: 1,
+		psm: 3,
+	}
+
+	return tesseract.recognize(image, config)
+		.then(text => text)
+		.catch(error => {
+			console.log(error.message)
+		})
 }
 
 module.exports = imageToText
