@@ -23,7 +23,8 @@ async function searchMedicine(value) {
     const options = {
         includeScore: true,
         includeMatches: true,
-        threshold: 0.3,
+        minMatchCharLength: 2,
+        threshold: 0.2,
         keys: [
             'name',
             'registrationNumber'
