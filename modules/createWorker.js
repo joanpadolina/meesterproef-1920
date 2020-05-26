@@ -4,10 +4,6 @@ const {
 
 const tesseract = require('node-tesseract-ocr');
 
-const worker = createWorker({
-	logger: m => console.log(m),
-})
-
 async function imageToText(image) {
 	const config = {
 		lang: "eng",
