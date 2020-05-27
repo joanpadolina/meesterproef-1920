@@ -16,7 +16,7 @@ This project is sectioned in __three__ ways.
 1. [Installation](#installation)
 1. [Documentation](#documentation)
     1. Debrief 
-    2. [Programma van Eisen](#programma-van-eisen)
+    2. Programma van Eisen
 1. [API](#api)
 1. [Concept](#concept)
 1. [Source](#source)
@@ -41,7 +41,7 @@ __<details><summary>Debrief</summary>__
 
 Lien Vo en Joan Padolina
 
-# Medicijn Scanner
+## Medicijn Scanner
 18 mei 2020
 
 ### Inleiding
@@ -94,5 +94,3 @@ __<details><summary> Programma van Eisen </summary>__
 * *extra mogelijkheid om live te scannen door middel van je camera/webcam
 </p>
 </details>
-
-## Programma van Eisen
