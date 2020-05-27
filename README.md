@@ -16,7 +16,7 @@ This project is sectioned in __three__ ways.
 1. [Installation](#installation)
 1. [Documentation](#documentation)
     1. Debrief 
-    2. [Programma van Eisen](#programma_van_eisen)
+    2. [Programma van Eisen](#programma-van-eisen)
 1. [API](#api)
 1. [Concept](#concept)
 1. [Source](#source)
@@ -95,4 +95,4 @@ __<details><summary> Programma van Eisen </summary>__
 </p>
 </details>
 
-
+## Programma van Eisen
