@@ -48,8 +48,6 @@ npm run dev
 __<details><summary>Debrief</summary>__
 <p>
 
-Lien Vo en Joan Padolina
-
 ## Medicijn Scanner
 18 mei 2020
 
