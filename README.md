@@ -34,7 +34,7 @@ git clone https://github.com/joanpadolina/meesterproef-1920.git
 ```
 npm install 
 ```
-3. Install packages
+3. Install tesseract locally
 ```
 brew install tesseract
 ```
