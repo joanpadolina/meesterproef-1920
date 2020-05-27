@@ -26,13 +26,22 @@ This project is sectioned in __three__ ways.
 ## Installation
 
 1. Close repository
-`git clone https://github.com/joanpadolina/meesterproef-1920.git`
+```
+git clone https://github.com/joanpadolina/meesterproef-1920.git
+```
 
 2. Install packages
-` npm install `
-
-3. Start server
-` npm run dev `
+```
+npm install 
+```
+3. Install packages
+```
+brew install tesseract
+```
+4. Start server
+``` 
+npm run dev 
+```
 
 ## Documentation
 
