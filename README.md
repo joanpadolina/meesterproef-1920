@@ -15,7 +15,8 @@ This project is sectioned in __three__ ways.
 
 1. [Installation](#installation)
 1. [Documentation](#documentation)
-  1. Debrief
+    1. Debrief 
+    2. [Programma van Eisen](#programma-van-eisen)
 1. [API](#api)
 1. [Concept](#concept)
 1. [Source](#source)
@@ -77,10 +78,10 @@ Het doel van de webapplicatie is de gebruiker helpen met het verkrijgen van de j
 </p>
 </details>
 
-__<details><summary> Programma van Eisen </summary>__
-  
+__<details><summary> Programma van Eisen </summary>__  
  <p>
-
+   
+## Programma van Eisen
 * Scan text door middel van een foto
 * Geef meerdere suggesties vanuit de api aan de hand van de scan
 * Handmatig zoeken door de medicijnlijst
@@ -91,7 +92,6 @@ __<details><summary> Programma van Eisen </summary>__
 * *extra Mogelijkheid om de webapplicatie te downloaden?
 * *extra Vind de juiste bijsluiter bij elke zoekresultaat
 * *extra mogelijkheid om live te scannen door middel van je camera/webcam
-
 </p>
 </details>
 
