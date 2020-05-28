@@ -1,10 +1,12 @@
 <%- include('partials/head') %> 
 <%- include('partials/header') %> 
     <main>
+
+        </div>
         <h2>Medicijn scanner</h2>
         <form action="/upload" method="POST" enctype="multipart/form-data">
             <input type="file" name="scanmeds" />
-            <button type="submit">scan de foto</button>
+            <button type="submit" class="upload">scan de foto</button>
         </form>
     </main>
 <%- include('partials/footer')  %> 
