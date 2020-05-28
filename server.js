@@ -8,6 +8,7 @@ const upload = require('./modules/multer')
 //routes
 const scanImage = require('./routes/scanner')
 const search = require('./routes/search')
+const medicine = require('./routes/medicine')
 const home = require('./routes/home')
 const uploadPage = require('./routes/uploadPage')
 
@@ -19,11 +20,12 @@ app
     .use('/image', express.static('uploads'))
     .set('view engine', 'ejs')
     .set('views', 'views')
-    .get('/', home)
     .get('/upload-image-page', uploadPage)
     .get('/search', search.get)
     .post('/search', search.post)
     .post('/upload-image-page', upload, uploadPage)
+    .get('/search', search)
+    .get('/medicine/:id', medicine)
     .post('/upload', upload, scanImage)
 
 app.listen(port, () => console.log('listening to ' + port))
