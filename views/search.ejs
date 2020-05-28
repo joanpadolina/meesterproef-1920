@@ -8,8 +8,8 @@
     <section>
         <% for(let i = 0; i < medicine.length; i++){%>
             <article>
-                <%= medicine[i].item.registrationNumber %>
-                <h2><a href="/medicine/<%= medicine[i].item.id %>"><%= medicine[i].item.name %></a></h2>
+                <%= medicine[i].registrationNumber %>
+                <h2><a href="/medicine/<%= medicine[i].id %>"><%= medicine[i].name %></a></h2>
             </article>
         <% } %>
     </section>

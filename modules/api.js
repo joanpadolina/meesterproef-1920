@@ -1,6 +1,6 @@
 const nodeFetch = require('node-fetch')
 const stringSimilarity = require('string-similarity');
-const Fuse = require('fuse.js');
+const FuzzySearch = require('fuzzy-search');
 
 async function fetch() {
     const url = 'https://hva-cmd-meesterproef-ai.now.sh/medicines'
@@ -16,26 +16,12 @@ async function fetchOne(id) {
     return json
 }
 
-// find best match in the data
+// find correct medicine by name
 async function searchMedicine(value) {
     const medicines = await fetch()
-    
-    const options = {
-        includeScore: true,
-        includeMatches: true,
-        minMatchCharLength: 2,
-        threshold: 0.2,
-        keys: [
-            'name',
-            'registrationNumber'
-        ]
-    }
-
-    const fuse = new Fuse(medicines, options)
-    const searchResult = fuse.search(value)   
-    console.log(searchResult);
-     
-    return searchResult
+    const fuzzy = new FuzzySearch(medicines, ['name']);
+    const result = fuzzy.search(value);
+    return result
 }
 
 async function getMedicine(value) {
@@ -43,7 +29,7 @@ async function getMedicine(value) {
     return medicine[0]
 }
 
-// search function
+// find best match
 async function getMedicineData(value) {
     const medicines = await fetch()
     const medicineNames = medicines.map(medicine => medicine.name)
