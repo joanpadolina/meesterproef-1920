@@ -142,7 +142,7 @@ img.show-image {
 .upload-container {
     width: 30em;
     background: var(--grey-100);
-    height: 26em;
+    height: 30em;
     display: flex;
     position: relative;
     align-items: center;
