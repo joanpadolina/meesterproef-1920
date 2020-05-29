@@ -225,13 +225,12 @@ img.show-image {
 }
 
 .place-holder.container {
-    height: 100%;
-    background: var(--grey-400);
+    height: 42em;
+    background: var(--grey-100);
     position: relative;
     display: block;
-
+    border-radius: 1em;
 }
-
 
 .imageplaceholder article {
     text-align: center;
