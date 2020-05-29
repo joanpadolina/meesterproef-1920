@@ -9,6 +9,7 @@ const upload = require('./modules/multer')
 const scanImage = require('./routes/scanner')
 const search = require('./routes/search')
 const home = require('./routes/home')
+const medicine = require('./routes/medicine')
 const uploadPage = require('./routes/uploadPage')
 
 app
@@ -21,8 +22,8 @@ app
     .set('views', 'views')
     .get('/', home)
     .get('/upload-image-page', uploadPage)
-    .get('/search', search.get)
-    .post('/search', search.post)
+    .get('/search', search)
+    .get('/medicine/:id', medicine)
     .post('/upload-image-page', upload, uploadPage)
     .post('/upload', upload, scanImage)
 
