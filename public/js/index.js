@@ -2,9 +2,12 @@ console.log('welcome to the clientside')
 
 // document query
 const medsSection = document.querySelector('.meds-result')
-const upload = document.querySelector('.upload')
+const uploadBtn = document.querySelector('.upload')
+const inputFile = document.querySelector('#file')
 const loader = document.querySelector('.loading-state')
-
+const placeHolder = document.querySelector('.place-holder')
+const imgPlaceHolder = document.querySelector('.imageplaceholder')
+const formContainer = document.querySelector('.form-container')
 //full page load
 // window.addEventListener('load', function () {
 //     setTimeout(() => {
@@ -12,9 +15,20 @@ const loader = document.querySelector('.loading-state')
 //     }, 0)
 // })
 
-// upload button starts loading
+console.log(uploadBtn)
+console.log(inputFile)
+inputFile.addEventListener('change', () => {
+    if (inputFile.files.length == 1) {
+        console.log('yerps', inputFile.files)
+        uploadBtn.click()
+    }
 
-upload.addEventListener('click', (e) => {
+})
+
+
+// uploadBtn button starts loading
+
+uploadBtn.addEventListener('click', (e) => {
     setTimeout(() => {
         loader.className += " show"
     }, 400)
@@ -23,10 +37,15 @@ upload.addEventListener('click', (e) => {
 medsSection.addEventListener('load', () => {
     setTimeout(() => {
         loader.className += " show"
+
     }, 1000)
+
 })
 
-console.log(medsSection.childElementCount)
-if (medsSection.childElementCount > 3) {
+console.log(imgPlaceHolder)
+if (medsSection.childElementCount >= 1) {
     medsSection.classList.replace('meds-result', 'meds-results')
+    placeHolder.className += " container"
+    imgPlaceHolder.children[1].style.display = "none"
+    formContainer.style.display ="none"
 }
