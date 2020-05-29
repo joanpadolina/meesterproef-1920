@@ -1,6 +1,15 @@
 const api = require('../modules/api')
 
-module.exports = async function (req,res) {
-    const medicine = await api.searchMedicine(req.query.medicine)
-    res.render('search', { medicine })
+async function post(req,res) {
+    const medicine = await api.getMedicineName(req.body.medicine)            
+    res.json(medicine)
+}
+
+async function get (req,res) {
+    res.render('search')
+}
+
+module.exports = {
+    get,
+    post
 }
