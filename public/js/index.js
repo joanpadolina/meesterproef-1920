@@ -1,51 +1,28 @@
 console.log('welcome to the clientside')
 
 // document query
-const medsSection = document.querySelector('.meds-result')
-const uploadBtn = document.querySelector('.upload')
-const inputFile = document.querySelector('#file')
+const medsSection = document.querySelector('.meds-results')
+const upload = document.querySelector('.upload')
 const loader = document.querySelector('.loading-state')
-const placeHolder = document.querySelector('.place-holder')
-const imgPlaceHolder = document.querySelector('.imageplaceholder')
-const formContainer = document.querySelector('.form-container')
-//full page load
-// window.addEventListener('load', function () {
-//     setTimeout(() => {
-//         loader.className += " hidden"
-//     }, 0)
-// })
 
-console.log(uploadBtn)
-console.log(inputFile)
-inputFile.addEventListener('change', () => {
-    if (inputFile.files.length == 1) {
-        console.log('yerps', inputFile.files)
-        uploadBtn.click()
-    }
-
+// full page load
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        loader.className += " hidden"
+    }, 2000)
 })
 
-
-// uploadBtn button starts loading
-
-uploadBtn.addEventListener('click', (e) => {
+// upload button starts loading
+upload.addEventListener('click', () => {
     setTimeout(() => {
         loader.className += " show"
-    }, 400)
-})
-// animation end after content reveal
-medsSection.addEventListener('load', () => {
-    setTimeout(() => {
-        loader.className += " show"
-
     }, 1000)
 
 })
+// animation end after content reveal
 
-console.log(imgPlaceHolder)
-if (medsSection.childElementCount >= 1) {
-    medsSection.classList.replace('meds-result', 'meds-results')
-    placeHolder.className += " container"
-    imgPlaceHolder.children[1].style.display = "none"
-    formContainer.style.display ="none"
-}
+medsSection.addEventListener('load', () => {
+    setTimeout(() => {
+        loader.className += " hidden"
+    }, 500)
+})
