@@ -1,11 +1,25 @@
-<%- include('partials/head') %> 
-<%- include('partials/header') %> 
-    <main>
+<%- include('partials/head') %>
+<main>
+    <div class="container">
+        <div class="contain">
+            <section class="intro">
+                <h1>Meddy.</h1>
+                <article>
+                    <p>
+                        Medicijn bibliotheek voor de juiste actieve stoffen.
+                    </p>
+                </article>
+            </section>
 
-        <h2>Medicijn scanner</h2>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="file" name="scanmeds" />
-            <button type="submit" class="upload">scan de foto</button>
-        </form>
-    </main>
-<%- include('partials/footer')  %> 
+            <section class="button-container">
+                <div>
+                    <a href="/upload-image-page">upload afbeelding</a>
+                </div>
+                <div>
+                    <a href="/search">zoeken</a>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer')  %>
