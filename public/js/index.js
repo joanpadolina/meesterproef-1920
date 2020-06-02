@@ -14,10 +14,7 @@ const formContainer = document.querySelector('.form-container')
 //         loader.className += " hidden"
 //     }, 0)
 // })
-
-console.log(uploadBtn)
-console.log(inputFile)
-inputFile.addEventListener('change', () => {
+inputFile.addEventListener('click', () => {
     if (inputFile.files.length == 1) {
         console.log('yerps', inputFile.files)
         uploadBtn.click()
@@ -42,7 +39,6 @@ medsSection.addEventListener('load', () => {
 
 })
 
-console.log(imgPlaceHolder)
 if (medsSection.childElementCount >= 1) {
     medsSection.classList.replace('meds-result', 'meds-results')
     placeHolder.className += " container"
