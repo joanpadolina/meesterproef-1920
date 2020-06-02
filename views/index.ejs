@@ -20,6 +20,17 @@
                 </div>
             </section>
         </div>
+        <% if (locals.history) { %>
+            <section>
+                <% for(let i = 0; i < history.length; i++) { %>
+                    <article>
+                        <h3>
+                            <%= history[i].name %>
+                        </h3>
+                    </article>
+                <% } %>
+            </section>
+        <% } %>
     </div>
 </main>
 <%- include('partials/footer')  %>
