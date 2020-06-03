@@ -6,13 +6,15 @@ module.exports = async (req, res) => {
     if (req.file) {
         const image = `./uploads/${req.file.originalname}`
         const text = await imageToText(image)
-        if (!text || text.length <= 3) {
+        const meds = await api.getMedicineData(text)
+        console.log(meds)
+        if ( text.length <= 3 || meds.rating <= 0.3 || meds[0].activeIngredient == '') {
             res.render('pages/uploadImage', {
                 text: text,
+                meds:meds,
                 image: req.file.originalname
             })
         } else {
-            const meds = await api.getMedicineData(text)
             res.render('pages/uploadImage', {
                 text: text,
                 meds: meds[0],

@@ -38,15 +38,14 @@
                     <div class="scan-line"></div>
                 </div>
             </div>
-            <% if( typeof meds == 'object' && meds){%>
-
-
+            <% if( typeof meds == 'object' && !meds.rating && !meds.activeIngredient == ''){%>
             <p><%= text  %> </p>
             <%- include('../partials/scanner_results') %>
 
             <% } %>
-            <% if(typeof text == 'string' && text.length <= 3){ %>
-            <p>no text detected: <%= text  %> </p>
+            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 || typeof meds == 'object' && meds.activeIngredient == ''){ %>
+            <span><%= text  %> </span>
+                <p>geen passende resultaat gevonden</p>
 
             <% } %>
         </section>

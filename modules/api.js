@@ -34,8 +34,15 @@ async function getMedicineData(value) {
     const medicines = await fetch()
     const medicineNames = medicines.map(medicine => medicine.name)
     const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
-    const medicineData = medicines.filter(meds => meds.name == medicine.target)
-    return medicineData
+    console.log(medicine.rating)
+    if (medicine.rating <= 0.3) {
+        return medicine
+    } else {
+        const medicineData = medicines.filter(meds => meds.name == medicine.target)
+        return medicineData
+    }
+
+
 }
 
 module.exports = {
