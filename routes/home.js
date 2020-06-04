@@ -1,15 +1,16 @@
-const jwt = require('jsonwebtoken')
 const api = require('../modules/api')
 
 module.exports = async (req, res) => {
 
-    // if cookies exist show scanned history
-    if(req.cookies.scanHistory) {
-        const decoded = jwt.verify(req.cookies.scanHistory, 'secret')
-        const medicineIds = decoded.medicine;
+    // if session exist show scanned history
+    if(req.session.scanHistory) {
+        const medicineIds = req.session.scanHistory;
         const medicineData = await api.getMedicines(medicineIds)
         res.render('index', { history: medicineData })
     } else {
+        req.session.scanHistory = [];
         res.render('index')
     }
+    console.log(req.session);
+
 }

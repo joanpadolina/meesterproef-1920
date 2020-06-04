@@ -4,7 +4,7 @@ require('dotenv').config()
 const port = process.env.PORT
 
 const upload = require('./modules/multer')
-const cookieParser = require('cookie-parser')
+const session = require('express-session')
 
 //routes
 const scanImage = require('./routes/scanner')
@@ -18,7 +18,11 @@ app
         extended: true
     }))
     .use(express.static('public'))
-    .use(cookieParser())
+    .use(session({
+        secret: process.env.KEY,
+        resave: false,
+        saveUninitialized: true,
+    }))
     .use('/image', express.static('uploads'))
     .set('view engine', 'ejs')
     .set('views', 'views')
