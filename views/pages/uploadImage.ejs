@@ -43,7 +43,7 @@
             <%- include('../partials/scanner_results') %>
 
             <% } %>
-            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 || typeof meds == 'object' && meds.activeIngredient == ''){ %>
+            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
             <span><%= text  %> </span>
                 <p>geen passende resultaat gevonden</p>
 

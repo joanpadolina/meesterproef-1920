@@ -6,9 +6,12 @@ module.exports = async (req, res) => {
     if (req.file) {
         const image = `./uploads/${req.file.originalname}`
         const text = await imageToText(image)
+        console.log(text)
         const meds = await api.getMedicineData(text)
-        console.log(meds)
-        if ( text.length <= 3 || meds.rating <= 0.3 || meds[0].activeIngredient == '') {
+        // text.length = for pictures without text
+        // meds.rating = for pictures with text but rating smimmilarity is low
+        // meds.activeIngredients = without ingredient don't show
+        if ( text.length <= 3 || meds.rating <= 0.3 ) {
             res.render('pages/uploadImage', {
                 text: text,
                 meds:meds,
