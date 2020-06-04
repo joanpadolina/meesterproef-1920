@@ -20,12 +20,13 @@
                 </div>
             </section>
         </div>
+
         <% if (locals.history) { %>
-            <section>
+            <section class="scan-history">
                 <% for(let i = 0; i < history.length; i++) { %>
                     <article>
                         <h3>
-                            <%= history[i].name %>
+                            <a href="/medicine/<%= history[i].id %>"><%= history[i].name %></a>
                         </h3>
                     </article>
                 <% } %>

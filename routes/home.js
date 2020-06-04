@@ -6,6 +6,8 @@ module.exports = async (req, res) => {
     if(req.session.scanHistory) {
         const medicineIds = req.session.scanHistory;
         const medicineData = await api.getMedicines(medicineIds)
+        console.log(medicineData);
+        
         res.render('index', { history: medicineData })
     } else {
         req.session.scanHistory = [];
