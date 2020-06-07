@@ -18,6 +18,9 @@ This project is sectioned in __three__ ways.
     1. Debrief 
     2. Programma van Eisen
 1. [API](#api)
+1. [Diagrams](#diagrams)
+    1. Actordiagram
+    2. Interactiondiagram
 1. [Concept](#concept)
 1. [Source](#source)
 1. [Credits](#credits)
@@ -101,3 +104,13 @@ __<details><summary> Programma van Eisen </summary>__
 * *extra mogelijkheid om live te scannen door middel van je camera/webcam
 </p>
 </details>
+
+
+## API
+
+## Diagrams
+
+### Actordiagram
+![Imgur](https://i.imgur.com/wyqiLwB.png)
+### Interaction diagram
+![Imgur](https://i.imgur.com/7CyWxtv.png)
