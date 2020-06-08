@@ -32,17 +32,39 @@ async function getMedicine(value) {
 // find best match
 async function getMedicineData(value) {
     const medicines = await fetch()
+    const rvgResults = stringifyJson(value)
+    const final = rvgResults.split(' ')
     const medicineNames = medicines.map(medicine => medicine.name)
     const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
-    console.log(medicine.rating)
-    if (medicine.rating <= 0.3) {
-        return medicine
-    } else {
+    
+    if (rvgResults) {
+        const rvgData = medicines.filter(meds => {
+            if(meds.registrationNumber.includes(final[1])){
+               return meds
+            }
+        })
+        return rvgData
+    } 
+    if(value){
         const medicineData = medicines.filter(meds => meds.name == medicine.target)
         return medicineData
     }
+    else {
 
+        const noValue = "No value found"
+        return noValue
+    }
+}
 
+function regexComply(stringResults) {
+    const text = stringResults
+    const regex = /(rvg \d+(\.\d)*)|(eu \d+(\.\d)*)| (rvh \d+(\.\d)*)/gi
+    const found = text.match(regex)
+    // console.log(found)
+    return found
+}
+function stringifyJson(value){
+  return JSON.stringify(regexComply(value)).replace(/[\[\]"]+/g,"")
 }
 
 module.exports = {

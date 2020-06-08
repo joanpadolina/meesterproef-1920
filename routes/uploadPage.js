@@ -10,7 +10,6 @@ module.exports = async (req, res) => {
         const meds = await api.getMedicineData(text)
         // text.length = for pictures without text
         // meds.rating = for pictures with text but rating smimmilarity is low
-        // meds.activeIngredients = without ingredient don't show
         if ( text.length <= 3 || meds.rating <= 0.3 ) {
             res.render('pages/uploadImage', {
                 text: text,
