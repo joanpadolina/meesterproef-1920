@@ -24,12 +24,20 @@ async function searchMedicine(value) {
     return result
 }
 
+// find one medicine by id
 async function getMedicine(value) {
     const medicine = await fetchOne(value);
     return medicine[0]
 }
 
-// find best match
+// find multiple medicines by id
+async function getAllMedicines(value) {
+    const medicines = await fetch(value);
+    const medicinesArray = medicines.filter(medicine => value.includes(medicine.id))
+    return medicinesArray;
+}
+
+// find best match by name
 async function getMedicineData(value) {
     const medicines = await fetch()
     const rvgResults = stringifyJson(value)
@@ -66,5 +74,6 @@ function stringifyJson(value) {
 module.exports = {
     getMedicineData,
     getMedicine,
+    getAllMedicines,
     searchMedicine
 }
