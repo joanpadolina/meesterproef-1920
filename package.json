@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/joanpadolina/meesterproef-1920#readme",
   "dependencies": {
-    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
