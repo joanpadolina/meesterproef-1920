@@ -1,18 +1,18 @@
 const api = require('../modules/api')
 
 module.exports = async (req, res) => {
-
     // if session exist show scanned history
-    if(req.session.scanHistory) {
-        const medicineIds = req.session.scanHistory;
-        const medicineData = await api.getMedicines(medicineIds)
-        console.log(medicineData);
-        
-        res.render('index', { history: medicineData })
+    if(req.session.medicineScans) {
+        const medicineIds = req.session.medicineScans;
+        const history = await getHistory(medicineIds)
+        res.render('index', { history })
     } else {
-        req.session.scanHistory = [];
+        req.session.medicineScans = [];
         res.render('index')
     }
-    console.log(req.session);
+}
 
+async function getHistory(medicineScans){
+    const medicineHistory = await api.getAllMedicines(medicineScans)
+    return medicineHistory;
 }

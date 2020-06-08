@@ -31,7 +31,7 @@ async function getMedicine(value) {
 }
 
 // find multiple medicines by id
-async function getMedicines(value) {
+async function getAllMedicines(value) {
     const medicines = await fetch(value);
     const medicinesArray = medicines.filter(medicine => value.includes(medicine.id))
     return medicinesArray;
@@ -49,6 +49,6 @@ async function getMedicineData(value) {
 module.exports = {
     getMedicineData,
     getMedicine,
-    getMedicines,
+    getAllMedicines,
     searchMedicine
 }

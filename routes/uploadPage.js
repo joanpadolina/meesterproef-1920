@@ -9,8 +9,8 @@ module.exports = async (req, res) => {
         const meds = await api.getMedicineData(text)
 
         // add new medicine id to history
-        if(req.session.scanHistory) {
-            req.session.scanHistory.push(meds[0].id)
+        if(req.session.medicineScans) {
+            req.session.medicineScans.push(meds[0].id)
         }
         
         res.render('pages/uploadImage', { text:text, meds:meds[0], image:req.file.originalname})
