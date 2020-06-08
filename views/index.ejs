@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head') %>
+<main>
+    <div class="container">
+        <div class="contain">
+            <section class="intro">
+                <h1>Meddy.</h1>
+                <article>
+                    <p>
+                        Medicijn bibliotheek voor de juiste actieve stoffen.
+                    </p>
+                </article>
+            </section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Medicijnen scanner</title>
-</head>
+            <section class="button-container">
+                <div>
+                    <a href="/upload-image-page">upload afbeelding</a>
+                </div>
+                <div>
+                    <a href="/search">zoeken</a>
+                </div>
+            </section>
+        </div>
 
-<body>
-    <h1>Medicijn scanner</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="scanmeds" />
-        <button type="submit">upload</button>
-    </form>
-</body>
-
-</html>
+        <% if (locals.history) { %>
+            <section class="scan-history">
+                <% for(let i = 0; i < history.length; i++) { %>
+                    <article>
+                        <h3>
+                            <a href="/medicine/<%= history[i].id %>"><%= history[i].name %></a>
+                        </h3>
+                    </article>
+                <% } %>
+            </section>
+        <% } %>
+    </div>
+</main>
+<%- include('partials/footer')  %>
