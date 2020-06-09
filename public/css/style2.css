@@ -67,17 +67,20 @@ nav {
 
     text-decoration: none;
     font-size: 2em;
-    color: var(--teal-800);
+    color: var(--teal-700);
+    opacity: .8;
 
 }
 
 .top-nav {
     width: 100%;
+
 }
 
 .top-nav img {
     width: 3em;
     padding: 0.3em;
+    opacity: .8;
 }
 
 .top-nav h1 {
@@ -100,9 +103,11 @@ header {
     padding: 1.2em;
     /* height: 20em; */
 }
+
 header h2 {
-    font-size:1em;
+    font-size: 1em;
 }
+
 header p {
     font-size: .8em;
 }
@@ -111,11 +116,13 @@ header img {
     width: 30vw;
     opacity: .5;
 }
-header.upload-header{
-    background:none;
-    color:var(--teal-700);
+
+header.upload-header {
+    background: none;
+    color: var(--teal-700);
 
 }
+
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -193,7 +200,12 @@ main.no-history img {
     width: 100vw;
 }
 
-.scan-history h2, .no-history h2 {
+.scan-history h3 {
+    padding: .5em;
+}
+
+.scan-history h2,
+.no-history h2 {
     font-size: .8em;
     color: var(--grey-700);
 }
@@ -202,10 +214,6 @@ main.no-history img {
     background: var(--grey-000);
     border-radius: 0.3em;
     box-shadow: 1px 4px 4px 0px var(--grey-400);
-}
-
-h3 {
-    padding: 0.5em;
 }
 
 .scan-history article a {
@@ -329,15 +337,18 @@ img.show-image {
     margin: 1em;
     border: .09em dashed var(--grey-500);
 }
+
 .upload-image img {
     display: inline-block;
     /* margin:1em; */
 }
+
 .upload-image div {
     text-align: center;
-    width:100%;
+    width: 100%;
     position: relative;
 }
+
 .upload-image p {
     font-size: 0.7em;
     color: var(--grey-600);
@@ -359,10 +370,12 @@ form {
     /* height:30em; */
     margin: auto;
 }
+
 .upload-scan p {
     font-size: .8em;
     font-family: Tahoma;
 }
+
 .upload-scan p {
     font-size: .8em;
     font-family: Tahoma;
@@ -379,14 +392,17 @@ form {
     padding: 1em;
     border-radius: 0.3em;
 }
-.results-scan article{
+
+.results-scan article {
     background: var(--grey-000);
     box-shadow: 1px 4px 4px 0px var(--grey-400);
 }
+
 .results-scan h3 {
-    padding:0;
+    padding: 0;
     font-size: 1em;
 }
+
 .results-scan span {
     color: var(--grey-600);
     font-size: 0.8em;
@@ -440,6 +456,52 @@ div.loading-state div span {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;
 }
+
+.med-detail {
+    padding: 1em;
+}
+
+.med-detail span {
+    color: var(--grey-600);
+    font-size: 0.8em;
+    font-family: "Avenir";
+    position: relative;
+    top: 1em;
+}
+
+/* search page */
+
+#medicine {
+    width: 100%;
+    border: none;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.search-form {
+    width: 100%;
+}
+.search-form button{
+    display:none;
+}
+.search-list article {
+    background: white;
+    padding: 0.8em;
+    margin: 1em;
+    border-radius: 0.4em;
+    box-shadow: 1px 4px 4px 0px var(--grey-400);
+}
+
+.search-list h2 {
+    font-size: 1em;
+}
+
+.search-list article a {
+    text-decoration: none;
+    color: var(--teal-800);
+}
+
+
 
 @keyframes scan-line-animation {
     0% {

@@ -1,8 +1,20 @@
-<%- include('../partials/head') %> 
-<%- include('../partials/header') %> 
-    <main>
-        <p><%= medicine.registrationNumber %></p>
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<main>
+    <!-- <span>Registratie nummer</span>
+    <p><%= medicine.registrationNumber %></p>
+    <span>Medicijn naam</span>
+    <h2><%= medicine.name %></h2>
+    <span>Actieve stoffen</span>
+    <h3><%= medicine.activeIngredient %></h3> -->
+
+    <section class="med-detail">
+        <span>Medicijn naam</span>
         <h2><%= medicine.name %></h2>
+        <span>Actieve ingredienten</span>
         <h3><%= medicine.activeIngredient %></h3>
-    </main>
-<%- include('../partials/footer')  %> 
+        <span>Registratie nummer</span>
+        <p><%= medicine.registrationNumber %></p>
+    </section>
+</main>
+<%- include('../partials/footer')  %>
