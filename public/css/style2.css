@@ -42,20 +42,7 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-main {
-
-    margin: auto;
-    width: 100%;
-    display: block;
-    position: relative;
-    margin: auto;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; */
-
+    background: var(--grey-200);
 }
 
 nav {
@@ -85,9 +72,12 @@ nav {
 }
 
 .top-nav {
-
     width: 100%;
+}
 
+.top-nav img {
+    width: 3em;
+    padding: 0.3em;
 }
 
 .top-nav h1 {
@@ -96,52 +86,130 @@ nav {
 
 }
 
-div.container {
-    height: 100vh;
+/* div.container {
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-wrap: wrap;
+} */
+
+header {
+    color: var(--grey-100);
+    background: var(--teal-400);
+    padding: 1.2em;
+    height: 20em;
 }
 
-div.container div.contain {
-    color: #4A5568;
-    height: max-content;
-    padding: 1em;
+header p {
+    font-size: .8em;
+}
 
+header img {
+    width: 30vw;
+    opacity: .5;
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1.4em;
 }
 
-.button-container div {
-    margin-left: .5em;
-    width: 11em;
+.button-container a {
+    width: 6em;
     height: 3em;
+    margin-bottom: .3em;
 }
 
-.button-container div:hover {
+.button-container a:hover {
     cursor: pointer;
 
 }
 
-.button-container div a {
+.button-container a {
     display: block;
     height: 100%;
-    width: 100%;
     text-decoration: none;
-    color: white;
-    background: var(--teal-gradient);
-    padding: .8em;
+    color: var(--teal-600);
+    background: var(--grey-000);
     text-align: center;
-    border-radius: 0.4em;
+    border-radius: 0.3em;
+    padding: 0.6em;
 }
-.button-container div:nth-of-type(1) a{
+
+.button-container a:nth-of-type(1) {
     animation: jump 10s ease-in-out infinite;
+}
+
+.button-container a:nth-of-type(2) {
+    background: var(--teal-600);
+    color: var(--grey-100);
+}
+
+.button-container a:nth-of-type(1) {
+    width: 11em;
+}
+
+main {
+
+    margin: auto;
+    width: 100%;
+    display: block;
+    position: relative;
+
+}
+
+main img {
+    width: 14em;
+}
+
+.no-history {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    justify-content: center;
+    background: var(--grey-200);
+    top: -2em;
+    border-radius: 1em 1em 0 0;
+}
+
+.no-history h2 {
+    font-size: .5em;
+    width: 100%;
+}
+
+.scan-history {
+    background: var(--grey-200);
+    padding: 1em;
+    border-radius: 1em 1em 0 0;
+    position: relative;
+    top: -2em;
+    width: 100vw;
+}
+
+.scan-history h2 {
+    font-size: .8em;
+    color: var(--grey-700);
+}
+
+.scan-history article {
+    background: var(--grey-000);
+    border-radius: 0.3em;
+    box-shadow: 1px 4px 4px 0px var(--grey-400);
+}
+
+h3 {
+    padding: 0.5em;
+}
+
+.scan-history article a {
+    text-decoration: none;
+    font-size: 0.7em;
+    color: var(--grey-800);
 }
 
 .inputfile {
@@ -191,7 +259,7 @@ label:hover {
     color: var(--grey-900);
 }
 
-img {
+img.place-holder {
     width: 100%;
     opacity: .3;
     margin: 0 0 .1rem;
@@ -366,6 +434,7 @@ div.loading-state div span {
     8% {
         transform: translateY(0em)
     }
+
     10% {
         transform: translateY(-.3em)
     }
@@ -373,9 +442,11 @@ div.loading-state div span {
     13% {
         transform: translateY(.0em)
     }
+
     15% {
         transform: translateY(-.4em)
     }
+
     18% {
         transform: translateY(0em)
     }
