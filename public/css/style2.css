@@ -46,16 +46,22 @@ body {
 }
 
 nav {
-
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: var(--teal-500);
+    background: var(--teal-400);
     color: var(--grey-900);
     z-index: 99;
-    position: relative;
+    position: sticky;
+    top: 0;
+    transition:400ms ease-in-out;
+    padding: 0.4em;
+}
+nav.changeBg{
+    /* transition:400ms ease-in-out; */
+    background: var(--teal-500);
 }
 
 .back {
@@ -74,11 +80,16 @@ nav {
 
 .top-nav {
     width: 100%;
-
+    transition:400ms ease-in-out;
 }
 
 .top-nav img {
     width: 3em;
+    padding: 0.7em;
+    opacity: 0;
+    transition:400ms ease-in-out;
+}
+img.scale-img{
     padding: 0.3em;
     opacity: .8;
 }
@@ -101,7 +112,6 @@ header {
     color: var(--grey-100);
     background: var(--teal-400);
     padding: 1.2em;
-    /* height: 20em; */
 }
 
 header h2 {
@@ -151,6 +161,7 @@ header.upload-header {
     text-align: center;
     border-radius: 0.3em;
     padding: 0.6em;
+    width: 11em;
 }
 
 .button-container a:nth-of-type(1) {
@@ -163,7 +174,7 @@ header.upload-header {
 }
 
 .button-container a:nth-of-type(1) {
-    width: 11em;
+    margin-bottom: 1em;
 }
 
 main {
@@ -175,8 +186,8 @@ main {
 
 }
 
-main.no-history img {
-    width: 14em;
+.no-history img {
+    width: 17em;
 }
 
 .no-history {
@@ -208,6 +219,7 @@ main.no-history img {
 .no-history h2 {
     font-size: .8em;
     color: var(--grey-700);
+    width: 100%;
 }
 
 .scan-history article {
@@ -480,6 +492,14 @@ div.loading-state div span {
 
 .search-form {
     width: 100%;
+    background: var(--teal-400);
+    padding: 1em;
+    position: sticky;
+    top: 3em;
+    margin-top: -1.2em;
+}
+.search-form input{
+    text-align: center;
 }
 .search-form button{
     display:none;
@@ -501,6 +521,15 @@ div.loading-state div span {
     color: var(--teal-800);
 }
 
+/* detail page */
+
+a.back-arrow {
+    padding: 1em;
+    display: flex;
+}
+svg path {
+    fill: var(--grey-600);
+}
 
 
 @keyframes scan-line-animation {
@@ -559,3 +588,10 @@ div.loading-state div span {
         transform: translateY(0em)
     }
 }
+
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+
+@media all and (min-width: 480px) and (max-width: 768px) { }
