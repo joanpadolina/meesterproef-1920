@@ -2,18 +2,33 @@
 
 <header>
     <div class="desktop-nav">
-        <img src="assets/svg/udraw/meddy_logo.svg" alt="">
+        <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
     </div>
     <section class="intro">
-        <h1>Meddy helpt je met het vinden van je medicijn.</h1>
-        <p>
-            Zoek op naam of scan je medicijndoosje op meer te weten te komen over jouw medicijn.
-        </p>
+        <div>
+
+
+            <div>
+                <h1>Meddy helpt je met het vinden van je medicijn.</h1>
+                <p>
+                    Zoek op naam of scan je medicijndoosje op meer te weten te komen over jouw medicijn.
+                </p>
+            </div>
+
+            <div class="button-container">
+                <a href="/upload-image-page">upload afbeelding</a>
+                <a href="/search">zoeken</a>
+            </div>
+
     </section>
-    <section class="button-container">
+    <!-- <section class="button-container">
         <a href="/upload-image-page">upload afbeelding</a>
         <a href="/search">zoeken</a>
+    </section> -->
+    <section class="intro-img">
+        <img src="/assets/svg/udraw/undraw_medical_care_movn 1.svg" alt="">
     </section>
+    </div>
 </header>
 <main>
 
@@ -31,7 +46,7 @@
     <% } else{ %>
     <section class="no-history">
         <h2>Geen recente medicijn</h2>
-        <img src="assets/svg/udraw/undraw_image_viewer_wxce.svg" alt="">
+        <img src="assets/svg/udraw/undraw_image_viewer_wxce.svg" alt="image-viewer">
     </section>
 
     <% } %>
