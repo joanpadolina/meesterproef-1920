@@ -8,33 +8,31 @@ const loader = document.querySelector('.loading-state')
 const placeHolder = document.querySelector('.place-holder')
 const imgPlaceHolder = document.querySelector('.imageplaceholder')
 const formContainer = document.querySelector('.form-container')
-//full page load
-// window.addEventListener('load', function () {
-//     setTimeout(() => {
-//         loader.className += " hidden"
-//     }, 0)
-// })
-inputFile.addEventListener('change', () => {
-    if (inputFile.files.length == 1) {
-        console.log('yerps', inputFile.files)
-        uploadBtn.click()
-    }
 
+const reader = new FileReader()
+const previewImg = document.querySelector('.imageplaceholder img')
+
+reader.onload = e => {
+    previewImg.src = e.target.result;
+}
+// https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
+
+inputFile.addEventListener('change', (e) => {
+    const img = e.target.files[0];
+    reader.readAsDataURL(img);
 })
 
-
 // uploadBtn button starts loading
-
 uploadBtn.addEventListener('click', (e) => {
     setTimeout(() => {
         loader.className += " show"
     }, 400)
 })
+
 // animation end after content reveal
 medsSection.addEventListener('load', () => {
     setTimeout(() => {
         loader.className += " show"
-
     }, 1000)
 
 })
