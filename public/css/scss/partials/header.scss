@@ -1,0 +1,56 @@
+header {
+	color: var(--grey-100);
+	background: var(--teal-400);
+	padding: 1.2em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	h2 {
+		font-size: 1em;
+	}
+	p {
+		font-size: .8em;
+	}
+	img {
+		&.meddy-logo {
+			width: 30vw;
+			opacity: .5;
+		}
+	}
+	&.upload-header {
+		background: none;
+		color: var(--teal-700);
+	}
+}
+.button-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 1.4em;
+	margin-bottom: 3em;
+	a {
+		width: 6em;
+		height: 3em;
+		margin-bottom: .3em;
+		display: block;
+		height: 100%;
+		text-decoration: none;
+		color: var(--teal-600);
+		background: var(--grey-000);
+		text-align: center;
+		border-radius: 0.3em;
+		padding: 0.6em;
+		width: 11em;
+		&:hover {
+			cursor: pointer;
+		}
+		&:nth-of-type(1) {
+			animation: jump 10s ease-in-out infinite;
+			margin-bottom: 1em;
+		}
+		&:nth-of-type(2) {
+			background: var(--teal-600);
+			color: var(--grey-100);
+		}
+	}
+}

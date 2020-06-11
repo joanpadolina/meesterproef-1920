@@ -1,0 +1,140 @@
+main.upload-main {
+    margin: auto;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 3em;
+
+    button.upload {
+        padding: 0.8em;
+        background: var(--berry-400);
+        border: none;
+        font-size: 1em;
+        color: white;
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 80%;
+    }
+
+    .upload-image {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em;
+        justify-content: center;
+        background: var(--grey-300);
+        margin: 1em;
+        border: .09em dashed var(--grey-500);
+        position: relative;
+
+        div.img-container {
+            display: inline-block;
+            width: 22em;
+            height: 14em;
+            margin-bottom: 3em;
+        }
+
+        img {
+            display: inline-block;
+            width: 100%;
+            object-fit: contain;
+            height: 100%;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        p {
+            font-size: 0.7em;
+            color: var(--grey-600);
+            width: 14em;
+            margin: 1em auto;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label {
+    width: 70%;
+    padding: 0.7em;
+    background: var(--teal-gradient);
+    border: none;
+    margin-top: 1em;
+    font-size: 0.9em;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
+    color: white;
+    margin: auto;
+    opacity: 1;
+    transition: 600ms ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        width: 78%;
+    }
+}
+
+.imageplaceholder {
+    color: var(--grey-700);
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    span {
+        font-weight: 800;
+    }
+
+    h3 {
+        color: var(--grey-900);
+    }
+
+    article {
+        text-align: center;
+        width: 14em;
+        margin: auto;
+    }
+}
+
+.upload-container {
+    width: 30em;
+    height: 30em;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+}
+
+.place-holder {
+    position: relative;
+    display: block;
+
+    &.container {
+        height: 27em;
+        background: var(--grey-100);
+        position: relative;
+        display: block;
+        border-radius: 1em;
+    }
+}
+
+
+
+form {
+    width: 15em;
+}
