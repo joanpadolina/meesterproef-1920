@@ -45,15 +45,14 @@
                 </label>
             </form>
         </section>
-        <button form="uploadForm" type="submit" class="upload">volgende stap</button>
+        <button form="uploadForm" type="submit" class="upload">medicijn scannen</button>
         <section class="upload-scan">
 
             <% if( typeof text == 'string'){%>
-            <h3>
-                Scan
-            </h3>
-            <p><%= text  %> </p>
-
+                <h3>
+                    Scan
+                </h3>
+                <p><%= text  %> </p>
             <% } %>
             <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
             <span><%= text  %> </span>
