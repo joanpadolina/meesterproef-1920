@@ -20,12 +20,6 @@ reader.onload = e => {
 inputFile.addEventListener('change', (e) => {
     const img = e.target.files[0];
     reader.readAsDataURL(img);
-        uploadBtn.click()
-
-    // if (inputFile.files.length == 1) {
-    //     console.log('yerps', inputFile.files)
-    //     uploadBtn.click()
-    // }
 })
 
 // uploadBtn button starts loading
@@ -50,22 +44,3 @@ if (medsSection.childElementCount >= 1) {
 } else{
   formContainer.style.display ="none"
 }
-
-// const worker = Tesseract.createWorker({})
-
-// async function getTextFromImage() {
-//     await worker.load()
-//     await worker.loadLanguage('nld')
-//     await worker.initialize('nld')
-//     await worker.setParameters({
-//         tessedit_char_whitelist: 'ABCDEFGHIJKLMNOPQRSTUVWXYabcdefghijklmnopqrstuvwxy'
-//     })
-//     const { data: { text } } = await worker.recognize(previewImg.src)
-
-//     await worker.terminate()
-
-//     return text
-// }
-
-// getTextFromImage()
-//   .then(console.log)
