@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const port = process.env.PORT
 
-const upload = require('./modules/multer')
+const multer = require('./modules/multer')
 const session = require('express-session')
 
 //routes
@@ -11,7 +11,7 @@ const scanImage = require('./routes/scanner')
 const search = require('./routes/search')
 const home = require('./routes/home')
 const medicine = require('./routes/medicine')
-const uploadPage = require('./routes/uploadPage')
+const upload = require('./routes/upload')
 
 app
     .use(express.urlencoded({
@@ -27,10 +27,9 @@ app
     .set('view engine', 'ejs')
     .set('views', 'views')
     .get('/', home)
-    .get('/upload-image-page', uploadPage)
+    .get('/image-upload', upload.page)
     .get('/search', search)
     .get('/medicine/:id', medicine)
-    .post('/upload-image-page', upload, uploadPage)
-    .post('/upload', upload, scanImage)
+    .post('/image/scan', multer, scanImage)
 
 app.listen(port, () => console.log('listening to ' + port))
