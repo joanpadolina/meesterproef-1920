@@ -3,7 +3,7 @@ const stringSimilarity = require('string-similarity');
 const FuzzySearch = require('fuzzy-search');
 
 async function fetch() {
-    const url = 'https://hva-cmd-meesterproef-ai.now.sh/medicines'
+    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`
     const response = await nodeFetch(url)
     const json = await response.json()
     return json
@@ -18,7 +18,17 @@ async function fetchOne(id) {
 
 // find correct medicine by name
 async function searchMedicine(value) {
-    const medicines = await fetch()
+    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines?_limit=20`
+    const response = await nodeFetch(url)
+    const json = await response.json()
+    const medicines = await json
+    const fuzzy = new FuzzySearch(medicines, ['name']);
+    const result = fuzzy.search(value);
+    return result
+}
+
+async function searchResultLimit(value) {
+    const medicines = await fetch('?_limit=20')
     const fuzzy = new FuzzySearch(medicines, ['name']);
     const result = fuzzy.search(value);
     return result

@@ -8,9 +8,21 @@ const loader = document.querySelector('.loading-state')
 const placeHolder = document.querySelector('.place-holder')
 const imgPlaceHolder = document.querySelector('.imageplaceholder')
 const formContainer = document.querySelector('.form-container')
+const nav = document.querySelector('nav')
+
+window.addEventListener('scroll', e => {
+    if (window.scrollY >= 45) {
+        nav.children[0].childNodes[1].classList.add('scale-img')
+        nav.classList.add('changeBg')
+    } else {
+        nav.children[0].childNodes[1].classList.remove('scale-img')
+        nav.classList.remove('changeBg')
+    }
+
+})
 
 const reader = new FileReader()
-const previewImg = document.querySelector('.imageplaceholder img')
+const previewImg = document.querySelector('.upload-image img')
 
 reader.onload = e => {
     previewImg.src = e.target.result;
@@ -41,6 +53,6 @@ if (medsSection.childElementCount >= 1) {
     medsSection.classList.replace('meds-result', 'meds-results')
     placeHolder.className += " container"
     imgPlaceHolder.children[1].style.display = "none"
-} else{
-  formContainer.style.display ="none"
+} else {
+    formContainer.style.display = "none"
 }

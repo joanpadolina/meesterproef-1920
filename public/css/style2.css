@@ -42,33 +42,26 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-main {
-
-    margin: auto;
-    width: 100%;
-    display: block;
-    position: relative;
-    margin: auto;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; */
-
+    background: var(--grey-200);
 }
 
 nav {
-
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: var(--teal-500);
+    background: var(--teal-400);
     color: var(--grey-900);
     z-index: 99;
-    position: relative;
+    position: sticky;
+    top: 0;
+    transition:400ms ease-in-out;
+    padding: 0.4em;
+}
+nav.changeBg{
+    /* transition:400ms ease-in-out; */
+    background: var(--teal-500);
 }
 
 .back {
@@ -79,15 +72,25 @@ nav {
 .back a {
 
     text-decoration: none;
-    font-size: 2em;
-    color: var(--teal-800);
+    color: var(--teal-700);
+    opacity: .8;
 
 }
 
 .top-nav {
-
     width: 100%;
+    transition:400ms ease-in-out;
+}
 
+.top-nav img {
+    width: 3em;
+    padding: 0.7em;
+    opacity: 0;
+    transition:400ms ease-in-out;
+}
+img.scale-img{
+    padding: 0.4em;
+    opacity: .8;
 }
 
 .top-nav h1 {
@@ -95,53 +98,134 @@ nav {
     font-size: 1.3em;
 
 }
-
-div.container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
+.intro-img{
+    display: none;
 }
 
-div.container div.contain {
-    color: #4A5568;
-    height: max-content;
-    padding: 1em;
+header {
+    color: var(--grey-100);
+    background: var(--teal-400);
+    padding: 1.2em;
+}
+
+header h2 {
+    font-size: 1em;
+}
+
+header p {
+    font-size: .8em;
+}
+
+header img.meddy-logo {
+    width: 30vw;
+    opacity: .5;
+}
+
+header.upload-header {
+    background: none;
+    color: var(--teal-700);
 
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 1.4em;
+    margin-bottom: 3em;
 }
 
-.button-container div {
-    margin-left: .5em;
-    width: 11em;
+.button-container a {
+    width: 6em;
     height: 3em;
+    margin-bottom: .3em;
 }
 
-.button-container div:hover {
+.button-container a:hover {
     cursor: pointer;
 
 }
 
-.button-container div a {
+.button-container a {
     display: block;
     height: 100%;
-    width: 100%;
     text-decoration: none;
-    color: white;
-    background: var(--teal-gradient);
-    padding: .8em;
+    color: var(--teal-600);
+    background: var(--grey-000);
     text-align: center;
-    border-radius: 0.4em;
+    border-radius: 0.3em;
+    padding: 0.6em;
+    width: 11em;
 }
-.button-container div:nth-of-type(1) a{
+
+.button-container a:nth-of-type(1) {
     animation: jump 10s ease-in-out infinite;
+}
+
+.button-container a:nth-of-type(2) {
+    background: var(--teal-600);
+    color: var(--grey-100);
+}
+
+.button-container a:nth-of-type(1) {
+    margin-bottom: 1em;
+}
+
+main {
+
+    margin: auto;
+    width: 100%;
+    display: block;
+    position: relative;
+
+}
+
+.no-history img {
+    width: 17em;
+}
+
+.no-history {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    justify-content: center;
+    background: var(--grey-200);
+    top: -2em;
+    border-radius: 1em 1em 0 0;
+}
+
+.scan-history {
+    background: var(--grey-200);
+    padding: 1em;
+    border-radius: 1em 1em 0 0;
+    position: relative;
+    top: -2em;
+    width: 100vw;
+}
+
+.scan-history h3 {
+    padding: .5em;
+}
+
+.scan-history h2,
+.no-history h2 {
+    font-size: .8em;
+    color: var(--grey-700);
+    width: 100%;
+}
+
+.scan-history article {
+    background: var(--grey-000);
+    border-radius: 0.3em;
+    box-shadow: 1px 4px 4px 0px var(--grey-400);
+}
+
+.scan-history article a {
+    text-decoration: none;
+    font-size: 0.7em;
+    color: var(--grey-800);
 }
 
 .inputfile {
@@ -191,7 +275,7 @@ label:hover {
     color: var(--grey-900);
 }
 
-img {
+img.place-holder {
     width: 100%;
     opacity: .3;
     margin: 0 0 .1rem;
@@ -201,9 +285,9 @@ img.show-image {
 
     opacity: 1;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-fit: contain;
-    padding: 1em;
+    /* padding: 1em; */
 
 }
 
@@ -247,12 +331,43 @@ img.show-image {
     margin-top: 1em;
     font-size: 1em;
     color: white;
-    display: none;
-
 }
 
-.meds-results {
-    width: 26em;
+.upload-image {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    justify-content: center;
+    background: var(--grey-300);
+    margin: 1em;
+    border: .09em dashed var(--grey-500);
+}
+
+.upload-image img {
+    display: inline-block;
+    width: 100%;
+    /* margin:1em; */
+}
+
+.upload-image div {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.upload-image p {
+    font-size: 0.7em;
+    color: var(--grey-600);
+    width: 14em;
+    margin: 1em auto;
+}
+
+form {
+    width: 15em;
+}
+
+.upload-scan {
+    width: 100%;
     background: var(--grey-200);
     padding: 1em;
     border-radius: 1em;
@@ -262,27 +377,44 @@ img.show-image {
     margin: auto;
 }
 
-.meds-result {
+.upload-scan p {
+    font-size: .8em;
+    font-family: Tahoma;
+}
 
-    height: 15em;
-    position: relative;
-    width: 26em;
+.upload-scan p {
+    font-size: .8em;
+    font-family: Tahoma;
     padding: 1em;
-    border-radius: 1em;
-    text-align: center;
-    background: var(--grey-100);
-    color: var(--grey-600);
-    margin: auto;
-
+    background: var(--teal-200);
+    border: dashed .1em var(--teal-400);
+    top: -1em;
+    position: relative;
 }
 
 .results-scan {
     text-align: left;
+    /* background: var(--grey-000); */
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.results-scan article {
+    background: var(--grey-000);
+    box-shadow: 1px 4px 4px 0px var(--grey-400);
+}
+
+.results-scan h3 {
+    padding: 0;
+    font-size: 1em;
 }
 
 .results-scan span {
     color: var(--grey-600);
+    font-size: 0.8em;
 }
+
+
 
 /* loading animation */
 
@@ -301,7 +433,7 @@ div.loading-state {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: var(--grey-300);
     opacity: 0;
     visibility: hidden;
 
@@ -330,6 +462,69 @@ div.loading-state div span {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;
 }
+
+.med-detail {
+    padding: 1em;
+}
+
+.med-detail span {
+    color: var(--grey-600);
+    font-size: 0.8em;
+    font-family: "Avenir";
+    position: relative;
+    top: 1em;
+}
+
+/* search page */
+
+#medicine {
+    width: 100%;
+    border: none;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.search-form {
+    width: 100%;
+    background: var(--teal-400);
+    padding: 1em;
+    position: sticky;
+    top: 3em;
+    margin-top: -1.2em;
+}
+.search-form input{
+    text-align: center;
+}
+.search-form button{
+    display:none;
+}
+.search-list article {
+    background: white;
+    padding: 0.8em;
+    margin: 1em;
+    border-radius: 0.4em;
+    box-shadow: 1px 4px 4px 0px var(--grey-400);
+}
+
+.search-list h2 {
+    font-size: 1em;
+}
+
+.search-list article a {
+    text-decoration: none;
+    color: var(--teal-800);
+}
+
+/* detail page */
+
+a.back-arrow {
+    padding: 1em;
+    display: flex;
+}
+svg path {
+    fill: var(--grey-600);
+}
+
 
 @keyframes scan-line-animation {
     0% {
@@ -366,6 +561,7 @@ div.loading-state div span {
     8% {
         transform: translateY(0em)
     }
+
     10% {
         transform: translateY(-.3em)
     }
@@ -373,9 +569,11 @@ div.loading-state div span {
     13% {
         transform: translateY(.0em)
     }
+
     15% {
         transform: translateY(-.4em)
     }
+
     18% {
         transform: translateY(0em)
     }
@@ -384,3 +582,55 @@ div.loading-state div span {
         transform: translateY(0em)
     }
 }
+
+
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+@media (min-width: 768px) { 
+    nav{
+        display:none;
+    }
+    header {
+        color: var(--grey-700);
+        background: var(--grey-200);
+        padding: 1.2em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    header.upload-header, .upload-image, .upload-scan{
+        width: 22em;
+        display: block;
+    }
+    .intro {
+        position: relative;
+        top: 3em;
+        width: 24em;
+    }
+    .desktop-nav {
+        position: absolute;
+        width: 100%;
+        background: white;
+        top: 0;
+        left: 0;
+        box-shadow: 1px 4px 4px 0px var(--grey-500);
+    }
+    .desktop-nav img.meddy-logo{
+        padding:1em;
+        width:7em;
+    }
+    .results-scan article {
+        font-size: 0.9em;
+    }
+    .container {
+        display: flex;
+    }
+    .intro-img{
+        display: block;
+    }
+    
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+
+ }

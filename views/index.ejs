@@ -1,37 +1,55 @@
 <%- include('partials/head') %>
+
+<header>
+    <div class="desktop-nav">
+        <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
+    </div>
+    <section class="intro">
+        <div>
+
+
+            <div>
+                <h1>Meddy helpt je met het vinden van je medicijn.</h1>
+                <p>
+                    Zoek op naam of scan je medicijndoosje op meer te weten te komen over jouw medicijn.
+                </p>
+            </div>
+
+            <div class="button-container">
+                <a href="/upload-image-page">upload afbeelding</a>
+                <a href="/search">zoeken</a>
+            </div>
+
+    </section>
+    <!-- <section class="button-container">
+        <a href="/upload-image-page">upload afbeelding</a>
+        <a href="/search">zoeken</a>
+    </section> -->
+    <section class="intro-img">
+        <img src="/assets/svg/udraw/undraw_medical_care_movn 1.svg" alt="">
+    </section>
+    </div>
+</header>
 <main>
-    <div class="container">
-        <div class="contain">
-            <section class="intro">
-                <h1>Meddy.</h1>
-                <article>
-                    <p>
-                        Medicijn bibliotheek voor de juiste actieve stoffen.
-                    </p>
-                </article>
-            </section>
 
-            <section class="button-container">
-                <div>
-                    <a href="/upload-image-page">upload afbeelding</a>
-                </div>
-                <div>
-                    <a href="/search">zoeken</a>
-                </div>
-            </section>
-        </div>
-
-        <% if (locals.history) { %>
-            <section class="scan-history">
-                <% for(let i = 0; i < history.length; i++) { %>
-                    <article>
-                        <h3>
-                            <a href="/medicine/<%= history[i].id %>"><%= history[i].name %></a>
-                        </h3>
-                    </article>
-                <% } %>
-            </section>
+    <% if (locals.history) { %>
+    <section class="scan-history">
+        <h2>Recent gescand</h2>
+        <% for(let i = 0; i < history.length; i++) { %>
+        <article>
+            <h3>
+                <a href="/medicine/<%= history[i].id %>"><%= history[i].name %></a>
+            </h3>
+        </article>
         <% } %>
+    </section>
+    <% } else{ %>
+    <section class="no-history">
+        <h2>Geen recente medicijn</h2>
+        <img src="assets/svg/udraw/undraw_image_viewer_wxce.svg" alt="image-viewer">
+    </section>
+
+    <% } %>
     </div>
 </main>
 <%- include('partials/footer')  %>
