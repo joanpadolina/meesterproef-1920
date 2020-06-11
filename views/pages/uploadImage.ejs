@@ -3,7 +3,7 @@
 <main>
     <header class="upload-header">
         <h1>
-            Medicijn zoeken
+            Upload een foto van jouw medicijn
         </h1>
         <h2>
             1. Upload een foto
@@ -17,8 +17,6 @@
 
         <section class="upload-image">
             <div>
-
-
                 <div class="loading-state">
                     <div>
                         <span class="letters">
@@ -27,10 +25,11 @@
                         <div class="scan-line"></div>
                     </div>
                 </div>
-                <% if(typeof image == 'string' && image){ %>
-                <img src="/image/<%= image %>" alt="" class="show-image">
-                <% }else{ %>
-                <img src="assets/svg/udraw/undraw_folder_x4ft.svg" alt="imgfolder">
+
+                <% if(typeof image == 'string' && image) { %>
+                    <img src="/image/<%= image %>" alt="" class="show-image">
+                <% } else{ %>
+                    <img src="/assets/svg/udraw/undraw_folder_x4ft.svg" alt="imgfolder">
                 <% } %>
 
                 <div>
@@ -39,48 +38,21 @@
                     </p>
                 </div>
             </div>
-            <form action="/upload-image-page" method="POST" enctype="multipart/form-data">
-                <input type="file" name="scanmeds" id="file" class="inputfile" />
-                <label for="file">kies een foto</label>
-                <button type="submit" class="upload">scan de foto</button>
+            <form id="uploadForm" action="/image/scan" method="POST" enctype="multipart/form-data">
+                <label for="file">
+                    <input type="file" name="scanmeds" id="file" class="inputfile" />
+                    kies een foto
+                </label>
             </form>
         </section>
-        <!-- 
-        <div class="upload-container">
-            <div id="image-place" class="place-holder">
-                <div class="imageplaceholder">
-
-                    <% if(typeof image == 'string' && image){ %>
-                    <img src="/image/<%= image %>" alt="" class="show-image">
-                    <% }else{ %>
-                    <img src="assets/svg/udraw/undraw_folder_x4ft.svg" alt="">
-                    <% } %>
-
-                    <article>
-                        <p>
-                            gebruik je camera om een foto te maken
-
-                        </p>
-                        <span> of </span>
-                    </article>
-                </div>
-                <div class="form-container">
-                    <form action="/upload-image-page" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="scanmeds" id="file" class="inputfile" />
-                        <label for="file">kies een foto</label>
-                        <button type="submit" class="upload">scan de foto</button>
-                    </form>
-                </div>
-            </div>
-        </div> -->
+        <button form="uploadForm" type="submit" class="upload">medicijn scannen</button>
         <section class="upload-scan">
 
             <% if( typeof text == 'string'){%>
-            <h3>
-                Scan
-            </h3>
-            <p><%= text  %> </p>
-
+                <h3>
+                    Scan
+                </h3>
+                <p><%= text  %> </p>
             <% } %>
             <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
             <span><%= text  %> </span>

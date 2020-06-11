@@ -1,0 +1,51 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<main>
+    <header class="upload-header">
+        <h1>Upload een foto van jouw medicijn</h1>
+        <h2>2. Medicijn scannen</h2>
+    </header>
+    <div class="container">
+        <section class="upload-image">
+            <div>
+                <div class="loading-state">
+                    <div>
+                        <span class="letters">
+                            Meddy.
+                        </span>
+                        <div class="scan-line"></div>
+                    </div>
+                </div>
+
+                <% if(typeof image == 'string' && image) { %>
+                    <img src="/image/<%= image %>" alt="" class="show-image">
+                <% } else{ %>
+                    <img src="/assets/svg/udraw/undraw_folder_x4ft.svg" alt="imgfolder">
+                <% } %>
+                <a href="/image-upload">kies een andere foto</a>
+            </div>
+        </section>
+    </div>
+
+    <section class="upload-scan">
+
+        <% if( typeof text == 'string'){%>
+            <h3>Gescande tekst</h3>
+            <p><%= text  %> </p>
+        <% } %>
+        
+        <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
+            <span><%= text  %> </span>
+            <p>geen passende resultaat gevonden</p>
+        <% } %>
+
+    </section>
+   
+    <% if( typeof meds == 'object' && !meds.rating && !meds.activeIngredient == ''){%>
+        <section class="results-scan">
+            <%- include('../partials/scanner_results') %>
+        </section>
+    <% } %>
+
+</main>
+<%- include('../partials/footer')  %>
