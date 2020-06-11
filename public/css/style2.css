@@ -331,7 +331,6 @@ img.show-image {
     margin-top: 1em;
     font-size: 1em;
     color: white;
-    display: none;
 }
 
 .upload-image {
@@ -346,6 +345,7 @@ img.show-image {
 
 .upload-image img {
     display: inline-block;
+    width: 100%;
     /* margin:1em; */
 }
 
