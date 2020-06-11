@@ -32,6 +32,4 @@ module.exports = async (req, res) => {
     } else {
         res.render('pages/scan')
     }
-
-    // res.render('./pages/scan', { text:text, meds:meds[0], image: req.file.originalname})
 }

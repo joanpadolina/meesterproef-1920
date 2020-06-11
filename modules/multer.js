@@ -13,6 +13,3 @@ const upload = multer({
 }).single('scanmeds')
 
 module.exports = upload
-
-// const storage = multer.memoryStorage()
-// const upload = multer({ storage: storage }).single('scanmeds')
