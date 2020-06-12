@@ -9,9 +9,9 @@ body {
     box-sizing: border-box;
 }
 
-@import "index";
-@import "upload";
-@import "scan-results";
-@import "search";
-@import "medicine-detail";
+@import "pages/index";
+@import "pages/upload";
+@import "pages/scan-results";
+@import "pages/search";
+@import "pages/medicine-detail";
 // @import "mediaqueries.scss"

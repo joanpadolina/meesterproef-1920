@@ -1,13 +1,13 @@
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 // colors
-@import "colors";
+@import "modules/colors";
 // partials
-@import "nav";
-@import "footer";
+@import "partials/nav";
+@import "partials/footer";
 
 // animation
-@import "loadingstate";
+@import "partials/loadingstate";
 
 // pages
-@import "all";
+@import "modules/all";
