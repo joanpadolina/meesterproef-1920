@@ -7,6 +7,7 @@ main.index {
     top: 4.5em;
 }
 
+
 header.index-header::after {
     content: "";
     width: 100%;
@@ -15,7 +16,6 @@ header.index-header::after {
     background: var(--teal-400);
     z-index: -1;
 }
-
 .desktop-nav {
     display: none;
 }
@@ -142,7 +142,6 @@ header {
         left: 1em;
         opacity: 0;
         animation: slide-in 300ms ease-in-out forwards;
-
         a {
             text-decoration: none;
             font-size: 0.7em;
@@ -150,7 +149,6 @@ header {
         }
     }
 }
-
 .scan-history h2,
 .no-history h2 {
     font-size: .8em;
@@ -158,9 +156,11 @@ header {
     width: 100%;
 }
 
-@keyframes slide-in {
-    100% {
-        left: 0em;
+
+
+@keyframes slide-in{
+    100%{
+        left:0em;
         opacity: 1;
     }
 }
