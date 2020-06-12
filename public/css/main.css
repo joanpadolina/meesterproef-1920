@@ -1,148 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-:root {
-  --grey-000: #ffffff;
-  --grey-100: #F7FAFC;
-  --grey-200: #EDF2F7;
-  --grey-300: #E2E8F0;
-  --grey-400: #CBD5E0;
-  --grey-500: #A0AEC0;
-  --grey-600: #718096;
-  --grey-700: #4A5568;
-  --grey-800: #2D3748;
-  --grey-900: #1A202C;
-  --berry-100: #FDEDF1;
-  --berry-200: #FBD1DB;
-  --berry-300: #F9B5C5;
-  --berry-400: #F47E9A;
-  --berry-500: #EF476F;
-  --berry-600: #D74064;
-  --berry-700: #8F2B43;
-  --berry-800: #6C2032;
-  --berry-900: #481521;
-  --teal-100: #EAF5F4;
-  --teal-200: #CAE7E3;
-  --teal-300: #AAD8D2;
-  --teal-400: #6ABAB1;
-  --teal-500: #2A9D8F;
-  --teal-600: #268D81;
-  --teal-700: #195E56;
-  --teal-800: #134740;
-  --teal-900: #0D2F2B;
-  --teal-gradient: linear-gradient(124deg, rgba(42, 157, 143, 1) 43%, rgba(25, 94, 86, 1) 100%); }
-
-nav {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background: var(--teal-400);
-  color: var(--grey-900);
-  z-index: 99;
-  position: fixed;
-  top: 0;
-  transition: 400ms ease-in-out;
-  padding: 0.4em; }
-  nav.changeBg {
-    background: var(--teal-500); }
-
-.back {
-  position: absolute;
-  left: 1em; }
-  .back a {
-    text-decoration: none;
-    color: var(--teal-700);
-    opacity: .8; }
-
-.top-nav {
-  width: 100%;
-  transition: 400ms ease-in-out; }
-  .top-nav img {
-    width: 3em;
-    padding: 0.7em;
-    opacity: 0;
-    transition: 400ms ease-in-out; }
-  .top-nav h1 {
-    font-size: 1.3em; }
-
-img.scale-img {
-  padding: 0.4em;
-  opacity: .8; }
-
-img.place-holder {
-  width: 100%;
-  opacity: .3;
-  margin: 0 0 .1rem; }
-
-img.show-image {
-  opacity: 1;
-  width: 100%;
-  object-fit: contain; }
-
-.desktop-nav {
-  position: absolute;
-  width: 100%;
-  background: white;
-  top: 0;
-  left: 0;
-  box-shadow: 1px 4px 4px 0px var(--grey-500); }
-  .desktop-nav img.meddy-logo {
-    padding: 1em;
-    width: 7em; }
-
-div.loading-state {
-  padding: 1em;
-  text-align: center;
-  position: absolute;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--grey-300);
-  opacity: 0;
-  visibility: hidden; }
-  div.loading-state div div.scan-line {
-    width: 10em;
-    background: var(--grey-600);
-    height: .15em;
-    margin: auto;
-    animation: scan-line-animation 2s ease-in-out infinite; }
-  div.loading-state div span {
-    color: var(--grey-500);
-    font-size: 2em;
-    font-weight: 900; }
-
-.loading-state.hidden {
-  animation: fadeOut 1s reverse;
-  animation-fill-mode: forwards; }
-
-.loading-state.show {
-  animation: fadeOut 1s;
-  animation-fill-mode: forwards; }
-
-@keyframes scan-line-animation {
-  0% {
-    display: block;
-    position: relative;
-    top: 0em; }
-  50% {
-    display: block;
-    position: relative;
-    top: -2em; }
-  100% {
-    display: block;
-    position: relative;
-    top: 0em; } }
-
-@keyframes fadeOut {
-  100% {
-    opacity: 1;
-    visibility: visible; } }
-
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -390,6 +245,151 @@ label {
   position: relative;
   display: block; }
   .place-holder.container {
+    height: 27em;
+    background: var(--grey-100);
+    position: relative;
+    display: block;
+    border-radius: 1em; }
+
+form {
+  width: 15em; }
+
+main.scan {
+  position: relative;
+  top: 2em; }
+  main.scan .upload-image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--grey-300);
+    position: relative;
+    height: 22em;
+    margin: 0;
+    border: none; }
+    main.scan .upload-image img {
+      object-fit: cover;
+      height: 100%; }
+    main.scan .upload-image .popup-results {
+      top: 6em;
+      position: relative;
+      height: 13em; }
+  main.scan .popup-results {
+    position: relative; }
+  main.scan .upload-scan {
+    width: 100%;
+    border-radius: 1em;
+    position: absolute;
+    color: #141414;
+    margin: auto;
+    padding: 0;
+    top: -8em;
+    height: 7em;
+    overflow: auto;
+    background: var(--grey-300);
+    transition: 300ms ease-in-out; }
+    main.scan .upload-scan:hover {
+      cursor: pointer; }
+    main.scan .upload-scan:active {
+      top: -14em;
+      height: 10em; }
+    main.scan .upload-scan span {
+      display: block;
+      font-size: 1.2em;
+      font-weight: 800; }
+    main.scan .upload-scan p {
+      font-family: Tahoma;
+      font-size: 0.7em;
+      font-family: Tahoma;
+      padding: 1em;
+      color: var(--grey-600); }
+  main.scan a {
+    text-decoration: none;
+    color: var(--grey-100);
+    background: var(--berry-500);
+    padding: 0.5em;
+    position: relative;
+    top: -2em;
+    width: 80%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    border-radius: 0.4em; }
+
+.results-scan article {
+  background: var(--grey-000);
+  box-shadow: 1px 4px 4px 0px var(--grey-400);
+  font-size: 0.9em;
+  padding: 1em; }
+
+.results-scan h3 {
+  padding: 0;
+  font-size: 1em; }
+
+.results-scan span {
+  color: var(--grey-600);
+  font-size: 0.8em; }
+
+.results-scan {
+  text-align: left;
+  border-radius: 0.3em;
+  top: -2em;
+  position: relative; }
+
+.search header {
+  margin: auto;
+  width: 100%;
+  display: block;
+  position: relative;
+  top: 1em; }
+
+.search-form {
+  width: 100%;
+  background: var(--teal-400);
+  padding: 1em;
+  position: sticky;
+  top: 3em;
+  margin-top: -1.2em; }
+  .search-form input {
+    text-align: center; }
+  .search-form button {
+    display: none; }
+
+.search-list {
+  background: var(--grey-100); }
+  .search-list article {
+    background: white;
+    padding: 0.8em;
+    margin: 1em;
+    border-radius: 0.4em;
+    box-shadow: 1px 4px 4px 0px var(--grey-400); }
+    .search-list article a {
+      text-decoration: none;
+      color: var(--teal-800); }
+  .search-list h2 {
+    font-size: 1em; }
+
+a.back-arrow {
+  padding: 1em;
+  display: flex; }
+
+svg path {
+  fill: var(--grey-600); }
+
+.med-detail {
+  padding: 1em; }
+  .med-detail span {
+    color: var(--grey-600);
+    font-size: 0.8em;
+    font-family: "Avenir";
+    position: relative;
+    top: 1em; }
+
+#medicine {
+  width: 100%;
+  border: none;
+  padding: 1em;
+  border-radius: 1em; }
+e-holder.container {
     height: 27em;
     background: var(--grey-100);
     position: relative;
