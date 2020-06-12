@@ -156,9 +156,9 @@ main.index {
   margin: auto;
   width: 100%;
   display: block;
-  position: relative;
+  position: absolute;
   height: 10em;
-  top: 4.5em; }
+  bottom: 0; }
 
 header.index-header::after {
   content: "";
@@ -408,7 +408,6 @@ main.scan {
     justify-content: center;
     background: var(--grey-300);
     position: relative;
-    height: 22em;
     margin: 0;
     border: none; }
     main.scan .upload-image img {
