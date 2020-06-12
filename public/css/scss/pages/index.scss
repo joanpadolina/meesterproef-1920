@@ -113,6 +113,7 @@ header {
     justify-content: center;
     background: var(--grey-200);
     border-radius: 1em 1em 0 0;
+    top: 1em;
 
     img {
         width: 17em;
@@ -125,6 +126,7 @@ header {
     border-radius: 1em 1em 0 0;
     position: relative;
     width: 100vw;
+    top: 2em;
     // position: absolute;
     // bottom: 0;
 
@@ -154,9 +156,41 @@ header {
     width: 100%;
 }
 
+
+
 @keyframes slide-in{
     100%{
         left:0em;
         opacity: 1;
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0em)
+    }
+
+    8% {
+        transform: translateY(0em)
+    }
+
+    10% {
+        transform: translateY(-.3em)
+    }
+
+    13% {
+        transform: translateY(.0em)
+    }
+
+    15% {
+        transform: translateY(-.4em)
+    }
+
+    18% {
+        transform: translateY(0em)
+    }
+
+    100% {
+        transform: translateY(0em)
     }
 }
