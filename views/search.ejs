@@ -5,17 +5,19 @@
         <h1>Medicijn zoeken</h1>
     </header>
     <form class="search-form" action="/search" method="GET">
-        <input type="text" name="medicine" id="medicine" placeholder="zoek op medicijn of op RVG nummer">
+        <input type="text" name="medicine" id="medicine" placeholder="zoek op medicijnnaam">
         <button type="submit">medicijn zoeken</button>
     </form>
-    <section class="search-list">
-        <% for(let i = 0; i < medicine.length; i++){%>
-        <article>
-            <%= medicine[i].registrationNumber %>
-            <h2><a href="/medicine/<%= medicine[i].id %>"><%= medicine[i].name %></a></h2>
-        </article>
-        <% } %>
-    </section>
+    <% if (locals.medicine){ %>
+        <section class="search-list">
+            <% for(let i = 0; i < medicine.length; i++){%>
+            <article>
+                <%= medicine[i].registrationNumber %>
+                <h2><a href="/medicine/<%= medicine[i].id %>"><%= medicine[i].name %></a></h2>
+            </article>
+            <% } %>
+        </section>
+    <% } %>
 </main>
 
 <%- include('partials/footer') %>
