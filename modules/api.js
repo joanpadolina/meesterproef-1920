@@ -18,7 +18,7 @@ async function fetchOne(id) {
 
 // find correct medicine by name
 async function searchMedicine(value) {
-    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines?_limit=20`
+    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`
     const response = await nodeFetch(url)
     const json = await response.json()
     const medicines = await json

@@ -1,10 +1,11 @@
 <%- include('partials/head') %>
-
-<header>
-    <div class="desktop-nav">
-        <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
-    </div>
+<nav class="desktop-nav">
+    <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
+</nav>
+<header class="index-header">
     <section class="intro">
+        <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
+
         <h1>Meddy helpt je met het vinden van je medicijn.</h1>
         <p>
             Zoek op naam of scan je medicijndoosje op meer te weten te komen over jouw medicijn.
@@ -23,9 +24,9 @@
     </section>
     </div>
 </header>
-<main>
+<main class="index">
 
-    <% if (locals.history) { %>
+    <% if (locals.history && history.length > 0) { %>
     <section class="scan-history">
         <h2>Recent gescand</h2>
         <% for(let i = 0; i < history.length; i++) { %>
