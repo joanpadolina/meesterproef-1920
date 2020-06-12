@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--grey-200); }
+
+* {
+  box-sizing: border-box; }
+
 :root {
   --grey-000: #ffffff;
   --grey-100: #F7FAFC;
@@ -142,15 +150,6 @@ div.loading-state {
   100% {
     opacity: 1;
     visibility: visible; } }
-
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: var(--grey-200); }
-
-* {
-  box-sizing: border-box; }
 
 main.index {
   margin: auto;
@@ -533,3 +532,37 @@ svg path {
   border: none;
   padding: 1em;
   border-radius: 1em; }
+
+@media (min-width: 768px) {
+  nav {
+    display: none; }
+  header {
+    color: var(--grey-700);
+    background: var(--grey-200);
+    padding: 1.2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  header.upload-header, .upload-image, .upload-scan {
+    width: 22em;
+    display: block; }
+  .intro {
+    position: relative;
+    top: 3em;
+    width: 24em; }
+  .desktop-nav {
+    position: absolute;
+    width: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 4px 4px 0px var(--grey-500); }
+  .desktop-nav img.meddy-logo {
+    padding: 1em;
+    width: 7em; }
+  .results-scan article {
+    font-size: 0.9em; }
+  .container {
+    display: flex; }
+  .intro-img {
+    display: block; } }
