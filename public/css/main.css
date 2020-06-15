@@ -291,6 +291,77 @@ header {
   100% {
     transform: translateY(0em); } }
 
+@media (min-width: 768px) {
+  header.index-header {
+    background: var(--grey-200);
+    padding: 0em;
+    height: 100vh; }
+  header img.meddy-logo {
+    width: 20vw;
+    opacity: .5; }
+  header.index-header::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: none;
+    z-index: -1; }
+  .intro {
+    position: relative;
+    width: 50%;
+    top: 0;
+    background: var(--grey-200);
+    color: var(--grey-800);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  main.index {
+    margin: 0;
+    width: 50%;
+    display: block;
+    position: absolute;
+    bottom: 0; }
+    main.index .scan-history {
+      background: var(--grey-300);
+      border-radius: 0em;
+      padding: 1em;
+      position: relative;
+      width: 50vw;
+      top: 0em; }
+      main.index .scan-history article {
+        background: var(--grey-000);
+        border-radius: 0.3em;
+        box-shadow: 1px 4px 4px 0px var(--grey-400);
+        position: relative;
+        left: 1em;
+        opacity: 0;
+        animation: slide-in 300ms ease-in-out forwards;
+        width: 40%; }
+  .intro-img {
+    height: 100%;
+    position: relative;
+    background: #83B0BC;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 50%; }
+    .intro-img div {
+      padding: 0em; }
+      .intro-img div img {
+        width: 100%;
+        height: 100%; }
+  .button-container {
+    justify-content: start; }
+    .button-container a {
+      color: var(--grey-100);
+      background: #FF756C; }
+      .button-container a:nth-of-type(2) {
+        background: var(--grey-100);
+        color: var(--teal-800);
+        border: var(--teal-600) solid 0.1em;
+        margin-left: 2em; } }
+
 main.upload-main {
   margin: auto;
   width: 100%;
@@ -532,37 +603,3 @@ svg path {
   border: none;
   padding: 1em;
   border-radius: 1em; }
-
-@media (min-width: 768px) {
-  nav {
-    display: none; }
-  header {
-    color: var(--grey-700);
-    background: var(--grey-200);
-    padding: 1.2em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center; }
-  header.upload-header, .upload-image, .upload-scan {
-    width: 22em;
-    display: block; }
-  .intro {
-    position: relative;
-    top: 3em;
-    width: 24em; }
-  .desktop-nav {
-    position: absolute;
-    width: 100%;
-    background: white;
-    top: 0;
-    left: 0;
-    box-shadow: 1px 4px 4px 0px var(--grey-500); }
-  .desktop-nav img.meddy-logo {
-    padding: 1em;
-    width: 7em; }
-  .results-scan article {
-    font-size: 0.9em; }
-  .container {
-    display: flex; }
-  .intro-img {
-    display: block; } }

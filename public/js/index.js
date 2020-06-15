@@ -9,6 +9,7 @@ const placeHolder = document.querySelector('.place-holder')
 const imgPlaceHolder = document.querySelector('.imageplaceholder')
 const formContainer = document.querySelector('.form-container')
 const nav = document.querySelector('nav')
+const imgSrc = document.querySelector('.placeholder-check')
 
 window.addEventListener('scroll', e => {
     if (window.scrollY >= 45) {
@@ -29,8 +30,45 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
+async function imageToText(image) {
+
+    const worker = Tesseract.createWorker({
+        logger: m => console.log(m)
+    });
+    Tesseract.setLogging(true);
+    work();
+
+    async function work() {
+        await worker.load();
+        await worker.loadLanguage('eng');
+        await worker.initialize('eng');
+
+        // let result = await worker.detect(image);
+        // console.log(result.data);
+
+        result = await worker.recognize(image);
+        console.log(result.data);
+
+        //   await worker.terminate();
+    }
+    c
+    if(text){
+        console.log('yes')
+    }
+}
+
+function regexComply(stringResults) {
+    const text = stringResults
+    const regex = /(rvg \d+(\.\d)*)|(eu \d+(\.\d)*)| (rvh \d+(\.\d)*)/gi
+    const found = text.match(regex)
+    // console.log(found)
+    return found
+}
+
 inputFile.addEventListener('change', (e) => {
     const img = e.target.files[0];
+    const test = imageToText(img)
+    console.log(test)
     reader.readAsDataURL(img);
 })
 

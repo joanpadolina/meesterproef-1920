@@ -63,7 +63,6 @@ async function getMedicineData(value) {
         const medicineData = medicines.filter(meds => meds.name == medicine.target)
         return medicineData
     } else {
-
         const noValue = "No value found"
         return noValue
     }
