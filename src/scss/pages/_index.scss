@@ -20,6 +20,12 @@ header.index-header::after {
 .desktop-nav {
     display: none;
 }
+.desktop-history{
+    display: none;
+}
+.mobile-histoy{
+    display: block;
+}
 
 header.upload-header,
 .upload-image,
@@ -102,7 +108,12 @@ header {
 }
 
 .intro-img {
-    display: none;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    img{
+        width:10em;
+    }
 }
 
 .no-history {
@@ -205,13 +216,9 @@ header {
 
 @media (min-width: 768px) {
     header.index-header {
-        // color: var(--grey-100);
-        background: var(--grey-200);
-        padding: 0em;
-        height: 100vh;
-        // display: flex;
-        // justify-content: space-around;
-        // align-items: center;
+        background: var(--teal-200);
+        padding: 3em;
+        height: 50vh;
     }
     header img.meddy-logo {
         width: 20vw;
@@ -230,30 +237,34 @@ header {
     .intro {
         position: relative;
         width: 50%;
-        // padding: 11em;
         top: 0;
-        background: var(--grey-200);
+        background: none;
         color: var(--grey-800);
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        div {
+            width: 25em;
+        }
     }
     // .hide-main{
     //     display:none;
     // }
+    .desktop-history{
+        display: block;
+    }
+    .mobile-history{
+        display: none;
+    }
     main.index {
             margin: 0;
-            width: 50%;
             display: block;
-            position: absolute;
-            bottom: 0;
+            position: relative;
         .scan-history {
-                background: var(--grey-300);
                 border-radius: 0em;
                 padding: 1em;
                 position: relative;
-                width: 50vw;
                 top: 0em;
             article {
                 background: var(--grey-000);
@@ -272,16 +283,21 @@ header {
     .intro-img {
         height: 100%;
         position: relative;
-        background: #83B0BC;
+        background: none;
         justify-content: center;
         align-items: center;
         display: flex;
         width: 50%;
 
         div {
-            padding: 0em;
+                background: none;
+                width: 25em;
+                padding: 2em;
+                color: var(--grey-700);
+                position: absolute;
 
             img {
+                object-fit: contain;
                 width: 100%;
                 height: 100%;
             }
@@ -290,12 +306,13 @@ header {
 
     .button-container {
         justify-content: start;
+        flex-wrap: nowrap;
         a {
             color: var(--grey-100);
-            background: #FF756C;
+            background: var(--teal-600);
 
             &:nth-of-type(2) {
-                background: var(--grey-100);
+                background: none;
                 color: var(--teal-800);
                 border: var(--teal-600) solid 0.1em;
                 margin-left: 2em;

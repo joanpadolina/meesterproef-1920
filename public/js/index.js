@@ -1,7 +1,7 @@
 console.log('welcome to the clientside')
 
 // document query
-const medsSection = document.querySelector('.meds-result')
+const medsSection = document.querySelector('.index')
 const uploadBtn = document.querySelector('.upload')
 const inputFile = document.querySelector('#file')
 const loader = document.querySelector('.loading-state')
@@ -51,7 +51,6 @@ async function imageToText(image) {
 
         //   await worker.terminate();
     }
-    c
     if(text){
         console.log('yes')
     }
@@ -86,11 +85,3 @@ medsSection.addEventListener('load', () => {
     }, 1000)
 
 })
-
-if (medsSection.childElementCount >= 1) {
-    medsSection.classList.replace('meds-result', 'meds-results')
-    placeHolder.className += " container"
-    imgPlaceHolder.children[1].style.display = "none"
-} else {
-    formContainer.style.display = "none"
-}
