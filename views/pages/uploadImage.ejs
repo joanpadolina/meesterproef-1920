@@ -62,7 +62,7 @@
                 </h3>
                 <p><%= text  %> </p>
             <% } %>
-            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
+            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && !meds ){ %>
             <span><%= text  %> </span>
             <p>geen passende resultaat gevonden</p>
 

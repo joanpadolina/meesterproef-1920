@@ -29,6 +29,36 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
+
+
+async function imageToText(image) {
+    const worker = Tesseract.createWorker({
+        logger: m => console.log(m.progress)
+    });
+    Tesseract.setLogging(true);
+    work();
+
+    async function work() {
+        await worker.load();
+        await worker.loadLanguage('eng');
+        await worker.initialize('eng');
+        let result = await worker.detect(image);
+        // console.log(result.data);
+        result = await worker.recognize(image);
+
+        try {
+            const renderedText = result.data.text
+            const data = await getMedicineData(renderedText)
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+            imageToText(worker)
+        }
+        await worker.terminate();
+    }
+}
+
+
 inputFile.addEventListener('change', (e) => {
     const img = e.target.files[0];
     reader.readAsDataURL(img);
@@ -38,16 +68,17 @@ inputFile.addEventListener('change', (e) => {
 uploadBtn.addEventListener('click', (e) => {
     setTimeout(() => {
         loader.className += " show"
-    }, 400)
+    }, 100)
 })
 
 // animation end after content reveal
 medsSection.addEventListener('load', () => {
     setTimeout(() => {
         loader.className += " show"
-    }, 1000)
+    }, 100)
 
 })
+
 
 if (medsSection.childElementCount >= 1) {
     medsSection.classList.replace('meds-result', 'meds-results')
@@ -55,4 +86,43 @@ if (medsSection.childElementCount >= 1) {
     imgPlaceHolder.children[1].style.display = "none"
 } else {
     formContainer.style.display = "none"
+}
+
+// api fetch
+
+async function apiFetch() {
+    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`
+    const response = await fetch(url)
+    const json = await response.json()
+    return json
+}
+
+async function getMedicineData(value) {
+    const medicines = await apiFetch()
+    const rvgResults = regexComply(value)
+    const medicineNames = medicines.map(medicine => medicine.name)
+    const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
+    if (rvgResults) {
+        const rvgData = medicines.filter(meds => meds.registrationNumber.includes(rvgResults[1]))
+        return rvgData
+    }
+    if (medicine) {
+        const medicineData = medicines.filter(meds => meds.name == medicine.target)
+        return medicineData
+    } else {
+        const noValue = "No value found"
+        return noValue
+    }
+}
+
+function regexComply(stringResults) {
+    const text = stringResults
+    if (text) {
+        const regex = /(rvg \d+(\.\d)*)|(eu \d+(\.\d)*)| (rvh \d+(\.\d)*)/gi
+        const found = text.match(regex)
+        return JSON.stringify(found).replace(/[\[\]"]+/g, "").split(' ')
+    } else {
+        console.log('nothing')
+    }
+
 }

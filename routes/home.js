@@ -2,6 +2,7 @@ const api = require('../modules/api')
 
 module.exports = async (req, res) => {
     // if session exist show scanned history
+
     if(req.session.medicineScans) {
         const medicineIds = req.session.medicineScans;
         const history = await getHistory(medicineIds)
