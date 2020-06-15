@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js & node-sass --include-path scss src/scss/main.scss public/css/main.css -w"
+    "dev": "nodemon server.js",
+    "scss":"nodemon server.js & node-sass --include-path scss src/scss/main.scss public/css/main.css -w"
   },
   "repository": {
     "type": "git",
