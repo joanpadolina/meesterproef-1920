@@ -492,11 +492,15 @@ form {
 
 @media (min-width: 768px) {
   nav {
-    background: var(--grey-100); }
+    background: var(--grey-100);
+    height: 3em; }
     nav::before {
       content: "Meddy.";
       color: var(--teal-700);
       position: fixed; }
+    nav .top-nav {
+      background: var(--grey-100);
+      display: none; }
     nav a {
       display: none; }
   main.upload-main {
