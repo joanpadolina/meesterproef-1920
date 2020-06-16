@@ -107,10 +107,25 @@ __<details><summary> Programma van Eisen </summary>__
 
 
 ## API
+Dit project maakt gebruikt van de API die door Voorhoede is aangeleverd.
+De volledige documentatie over deze API is te lezen in de volgende [ReadMe](https://github.com/typicode/json-server)
+[Link naar de pure API](https://hva-cmd-meesterproef-ai.now.sh/medicines) 
 
 ## Diagrams
 
 ### Actordiagram
-![Imgur](https://i.imgur.com/wyqiLwB.png)
+![actor](https://i.imgur.com/wyqiLwB.png)
 ### Interaction diagram
-![Imgur](https://i.imgur.com/7CyWxtv.png)
+![interaction](https://i.imgur.com/ITPSneO.png)
+
+## Concept
+
+## Source
+* [Tesseract](https://github.com/tesseract-ocr/)
+* [Stackoverflow](http://stackoverflow.com/)
+
+## Credits
+* [Damian](https://github.com/damian1997) // Multiple help on tesseract problems
+* Janno // Feedback on error handling
+* Laurens // Checkups
+* [Bas](https://github.com/aaraar) // Explained how branches work
