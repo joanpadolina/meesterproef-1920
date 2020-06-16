@@ -29,7 +29,8 @@ app
     .get('/', home)
     .get('/image-upload', upload.page)
     .get('/search', search)
-    .get('/medicine/:id', medicine)
+    .get('/medicine/:id', medicine.page)
+    .get('/:id', medicine.partial)
     .post('/image/scan', multer, scanImage)
 
 app.listen(port, () => console.log('listening to ' + port))
