@@ -1,7 +1,7 @@
 console.log('welcome to the clientside')
 
 // document query
-const medsSection = document.querySelector('.meds-result')
+const medsSection = document.querySelector('.index')
 const uploadBtn = document.querySelector('.upload')
 const inputFile = document.querySelector('#file')
 const loader = document.querySelector('.loading-state')
@@ -9,6 +9,7 @@ const placeHolder = document.querySelector('.place-holder')
 const imgPlaceHolder = document.querySelector('.imageplaceholder')
 const formContainer = document.querySelector('.form-container')
 const nav = document.querySelector('nav')
+const imgSrc = document.querySelector('.placeholder-check')
 
 window.addEventListener('scroll', e => {
     if (window.scrollY >= 45) {
@@ -61,6 +62,8 @@ async function imageToText(image) {
 
 inputFile.addEventListener('change', (e) => {
     const img = e.target.files[0];
+    const test = imageToText(img)
+    console.log(test)
     reader.readAsDataURL(img);
 })
 

@@ -4,15 +4,17 @@
 </nav>
 <header class="index-header">
     <section class="intro">
-        <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
+        <div>
+            <img class="meddy-logo" src="assets/svg/udraw/meddy_logo.svg" alt="">
 
-        <h1>Meddy helpt je met het vinden van je medicijn.</h1>
-        <p>
-            Zoek op naam of scan je medicijndoosje op meer te weten te komen over jouw medicijn.
-        </p>
-        <div class="button-container">
-            <a href="/image-upload">upload afbeelding</a>
-            <a href="/search">zoeken</a>
+            <h1>Meddy helpt je met het vinden van je medicijn.</h1>
+            <p>
+                Zoek op naam of scan je medicijndoosje op meer te weten te komen over jouw medicijn.
+            </p>
+            <div class="button-container">
+                <a href="/image-upload">upload afbeelding</a>
+                <a href="/search">zoeken</a>
+            </div>
         </div>
     </section>
     <!-- <section class="button-container">
@@ -20,12 +22,26 @@
         <a href="/search">zoeken</a>
     </section> -->
     <section class="intro-img">
-        <img src="/assets/svg/udraw/undraw_medical_care_movn 1.svg" alt="">
+        <div>
+            <img class="desktop-history" src="assets/svg/udraw/undraw_image_viewer_wxce.svg" alt="image-viewer">
+        </div>
+        <!-- <div>
+            <h2>Upload een medicijn</h2>
+            <img src="assets/steps/step1.png" alt="step1">
+        </div>
+        <div>
+            <h2>Scan het medicijn</h2>
+            <img src="assets/steps/step2.png" alt="step2">
+        </div>
+        <div>
+            <h2>Vind jouw medicijn</h2>
+            <img src="assets/steps/step3.png" alt="step3">
+        </div> -->
+
     </section>
     </div>
 </header>
 <main class="index">
-
     <% if (locals.history && history.length > 0) { %>
     <section class="scan-history">
         <h2>Recent gescand</h2>
@@ -40,10 +56,10 @@
     <% } else{ %>
     <section class="no-history">
         <h2>Geen recente medicijn</h2>
-        <img src="assets/svg/udraw/undraw_image_viewer_wxce.svg" alt="image-viewer">
+        <img class="mobile-history" src="assets/svg/udraw/undraw_image_viewer_wxce.svg" alt="image-viewer">
     </section>
 
     <% } %>
-    </div>
+
 </main>
 <%- include('partials/footer')  %>

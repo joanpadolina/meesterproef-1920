@@ -40,6 +40,8 @@ module.exports = async (req, res) => {
         }
 
 
+
+
     } else {
         res.render('pages/scan')
     }
