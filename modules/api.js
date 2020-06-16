@@ -53,20 +53,17 @@ async function getMedicineData(value) {
     const rvgResults = regexComply(value)
     const medicineNames = medicines.map(medicine => medicine.name)
     const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
-    console.log(medicine)
-    if (medicine.rating >= 0.4) {
+    if (medicine && medicine.rating >= 0.4) {
         const medicineData = medicines.filter(meds => {
             return meds.name == medicine.target
         })
-        console.log(medicineData)
         return medicineData
     }
     if (rvgResults) {
         const rvgData = medicines.filter(meds => meds.registrationNumber.includes(rvgResults[1]))
         return rvgData
     }
-
-    if (undefined) {
+    else {
         const noValue = "No value found"
         return noValue
     }
