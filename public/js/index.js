@@ -31,13 +31,25 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
-
+console.log('out',inputFile)
 inputFile.addEventListener('change', (e) => {
+    console.log(inputFile)
     const img = e.target.files[0];
+    changeActivityBtn()
     reader.readAsDataURL(img);
 })
-
-
+function changeActivityBtn(){
+    if(inputFile.files.length <= 0){
+        scanBtn.disabled = true
+        scanBtn.innerHTML = "selecteer een foto"
+    }
+    else{
+        scanBtn.disabled = false
+        scanBtn.classList.add('scanBtn-active')
+        scanBtn.innerHTML = "scan mijn foto"
+    }
+}
+changeActivityBtn()
 // scanBtn button starts loading
 scanBtn.addEventListener('click', (e) => {
     setTimeout(() => {
