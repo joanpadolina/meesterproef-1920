@@ -13,7 +13,15 @@ module.exports = async (req, res) => {
         const meds = await api.getMedicineData(text)
         try {
             // add new medicine id to history
-            if (req.session.medicineScans) {
+            if (!req.session.medicineScans) {
+                req.session.medicineScans = []
+                req.session.medicineScans.push(meds[0].id)
+                res.render('pages/scan', {
+                    text: text,
+                    meds: meds[0],
+                    image: req.file.originalname
+                })
+            } else {
                 req.session.medicineScans.push(meds[0].id)
                 res.render('pages/scan', {
                     text: text,
