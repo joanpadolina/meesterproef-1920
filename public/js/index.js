@@ -31,7 +31,6 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
-console.log('out',inputFile)
 inputFile.addEventListener('change', (e) => {
     console.log(inputFile)
     const img = e.target.files[0];
