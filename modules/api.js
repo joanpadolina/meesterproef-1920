@@ -1,6 +1,7 @@
 const nodeFetch = require('node-fetch')
 const stringSimilarity = require('string-similarity');
 const FuzzySearch = require('fuzzy-search');
+const allMedicines = fetch()
 
 async function fetch() {
     const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`
@@ -18,12 +19,9 @@ async function fetchOne(id) {
 
 // find correct medicine by name
 async function searchMedicine(value) {
-    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`
-    const response = await nodeFetch(url)
-    const json = await response.json()
-    const medicines = await json
-    const fuzzy = new FuzzySearch(medicines, ['name']);
-    const result = fuzzy.search(value);
+    const medicines = await allMedicines
+    const fuzzy = new FuzzySearch(medicines, ['name', 'registrationNumber'], { sort: true });
+    const result = fuzzy.search(value);    
     return result
 }
 
@@ -42,14 +40,14 @@ async function getMedicine(value) {
 
 // find multiple medicines by id
 async function getAllMedicines(value) {
-    const medicines = await fetch(value);
+    const medicines = await allMedicines
     const medicinesArray = medicines.filter(medicine => value.includes(medicine.id))
     return medicinesArray;
 }
 
 // find best match by name
 async function getMedicineData(value) {
-    const medicines = await fetch()
+    const medicines = await allMedicines
     const rvgResults = stringifyJson(value)
     const final = rvgResults.split(' ')
     const medicineNames = medicines.map(medicine => medicine.name)
@@ -63,7 +61,6 @@ async function getMedicineData(value) {
         const medicineData = medicines.filter(meds => meds.name == medicine.target)
         return medicineData
     } else {
-
         const noValue = "No value found"
         return noValue
     }
