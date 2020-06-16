@@ -56,3 +56,59 @@ svg {
         fill: var(--grey-600);
     }
 }
+
+@media (min-width: 768px) {
+    nav.search-nav{
+        display: none;
+    }
+    main.search{
+        header{
+            top:0;
+            h1 {
+                text-align: center;
+            }
+            &::after {
+                content: "";
+                width: 100vw;
+                background: var(--teal-400);
+                position: absolute;
+                display: inline-block;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+        .search-form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            top:0;
+            #medicine {
+                width: 30%;
+                border: none;
+                padding: 1em;
+                border-radius: 1em;
+            }
+            &::after {
+                content: "";
+                width: 100vw;
+                background: var(--teal-400);
+                position: absolute;
+                display: inline-block;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+        .search-list {
+            background: none;
+            article{
+                width:40%;
+                margin:1em auto;
+            }
+        }
+    }
+}

@@ -190,6 +190,11 @@ form {
             content: "Meddy.";
             color: var(--teal-700);
             position: fixed;
+            transition:400ms ease-in-out;
+        }
+        &:hover::before{
+            cursor: pointer;
+            font-weight: 800;
         }
 
         .top-nav {

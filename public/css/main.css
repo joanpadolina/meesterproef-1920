@@ -524,7 +524,11 @@ form {
     nav::before {
       content: "Meddy.";
       color: var(--teal-700);
-      position: fixed; }
+      position: fixed;
+      transition: 400ms ease-in-out; }
+    nav:hover::before {
+      cursor: pointer;
+      font-weight: 800; }
     nav .top-nav {
       background: var(--grey-100);
       display: none; }
@@ -720,6 +724,50 @@ a.back-arrow {
 svg path {
   fill: var(--grey-600); }
 
+@media (min-width: 768px) {
+  nav.search-nav {
+    display: none; }
+  main.search header {
+    top: 0; }
+    main.search header h1 {
+      text-align: center; }
+    main.search header::after {
+      content: "";
+      width: 100vw;
+      background: var(--teal-400);
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1; }
+  main.search .search-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    top: 0; }
+    main.search .search-form #medicine {
+      width: 30%;
+      border: none;
+      padding: 1em;
+      border-radius: 1em; }
+    main.search .search-form::after {
+      content: "";
+      width: 100vw;
+      background: var(--teal-400);
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1; }
+  main.search .search-list {
+    background: none; }
+    main.search .search-list article {
+      width: 40%;
+      margin: 1em auto; } }
+
 .med-detail {
   padding: 1em; }
   .med-detail span {
@@ -734,3 +782,9 @@ svg path {
   border: none;
   padding: 1em;
   border-radius: 1em; }
+
+@media (min-width: 768px) {
+  .med-detail {
+    padding: 1em;
+    width: 20em;
+    margin: auto; } }
