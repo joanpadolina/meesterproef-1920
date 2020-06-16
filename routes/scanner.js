@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
             text: 'No data'
         })
     }
-    if (req.file) {
+   if (req.file) {
         const image = `./uploads/${req.file.originalname}`
         const text = await imageToText(image)
         const meds = await api.getMedicineData(text)
@@ -38,12 +38,6 @@ module.exports = async (req, res) => {
                 image: req.file.originalname
             })
         }
-
-        res.render('pages/scan', {
-            text: text,
-            meds: meds[0],
-            image: req.file.originalname
-        })
 
     } else {
         res.render('pages/scan')
