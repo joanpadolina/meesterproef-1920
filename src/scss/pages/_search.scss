@@ -111,4 +111,28 @@ svg {
             }
         }
     }
+    .med-detail {
+        padding: 2em;
+        width: 24em;
+        margin: auto;
+        background: var(--grey-400);
+        position: fixed;
+        top: 13em;
+        border-radius: 0.5em;
+        left: 1em;
+    }
+    .remove-popup {
+        border: none;
+        position: absolute;
+        right: 0.5em;
+        top: 0.2em;
+        background: none;
+        font-size: 1.7em;
+        color: var(--grey-600);
+        transition:600ms ease-in-out;
+        &:hover{
+            cursor:pointer;
+            color:var(--berry-600);
+        }
+    }
 }

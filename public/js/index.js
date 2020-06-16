@@ -13,6 +13,8 @@ const imgSrc = document.querySelector('.placeholder-check')
 const inputBtn = document.querySelector('.inputfile')
 const links = document.querySelectorAll('.search-list a')
 const searchList = document.querySelector('.search-list')
+const popUp = document.querySelector('.med-detail')
+const popUpBtn = document.querySelector('.remove-popup')
 
 window.addEventListener('scroll', e => {
     if (window.scrollY >= 45) {
@@ -79,7 +81,6 @@ if (inputFile) {
         }
     }
 }
-
 // api fetch
 async function imageToText(image) {
 
