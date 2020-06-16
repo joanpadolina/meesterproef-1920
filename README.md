@@ -1,24 +1,24 @@
 # Medicine scanner
-
-A powerfull webapplication that helps medicine user to gain the right information about their medicine. With the use of Character recognition we are able to fetch data from an API specially made for this project. Voorhoede is our client who pitched this problem and we creator are excited to help them and the user.
+Een webapplicatie die medicijn gebruikers helpt op de juiste informatie te verkrijven over hun medicijn. Met het gebruikt van nieuwe technologie als "Optical Character Recognition" oftewel OCR kunnen gebruikers simpel weg een foto uploaden en hierbij de juiste data binnen halen. Door op de juiste en betrouwbare manier data op te halen uit de medicijn-api, geproduceerd door de Voorhoede, is de applicatie voor iedereen toegankelijk.
 
 © [Joan Padolina](www.github.com/joanpadolina) & [Lien Vo](www.github.com/nlvo)
 
 ## Introducion
-This project is sectioned in __three__ ways.
+Dit project is verdeeld in 3 delen:
 
-1. Design Rationale // __[This Readme](https://github.com/joanpadolina/meesterproef-1920)__
-1. Product Biography // __[Joan Padolina](https://github.com/joanpadolina/meesterproef-1920/wiki)__
-1. Product Biography // __[Lien Vo](https://github.com/nlvo/meesterproef-1920/wiki)__
+1. Design Rationale // __[Readme (u bevindt zich hier)](https://github.com/joanpadolina/meesterproef-1920)__
+1. Product biografie // __[Joan Padolina](https://github.com/joanpadolina/meesterproef-1920/wiki)__
+1. Product biografie // __[Lien Vo](https://github.com/nlvo/meesterproef-1920/wiki)__
 
-## Table of Contents
+## Inhoudsopgave
 
-1. [Installation](#installation)
-1. [Documentation](#documentation)
+1. [Installatie](#installatie)
+1. [Documentatie](#documentatie)
     1. Debrief 
     2. Programma van Eisen
 1. [API](#api)
-1. [Diagrams](#diagrams)
+1. [Tesseract](#tesseract)
+1. [Diagrammen](#diagrammen)
     1. Actordiagram
     2. Interactiondiagram
 1. [Concept](#concept)
@@ -26,9 +26,9 @@ This project is sectioned in __three__ ways.
 1. [Credits](#credits)
 
 
-## Installation
+## Installatie
 
-1. Close repository
+1. Kloon repository
 ```
 git clone https://github.com/joanpadolina/meesterproef-1920.git
 ```
@@ -37,7 +37,7 @@ git clone https://github.com/joanpadolina/meesterproef-1920.git
 ```
 npm install 
 ```
-3. Install tesseract locally
+3. Install tesseract lokaal
 ```
 brew install tesseract
 ```
@@ -46,7 +46,7 @@ brew install tesseract
 npm run dev 
 ```
 
-## Documentation
+## Documentatie
 
 __<details><summary>Debrief</summary>__
 <p>
@@ -111,8 +111,40 @@ Dit project maakt gebruikt van de API die door Voorhoede is aangeleverd.
 De volledige documentatie over deze API is te lezen in de volgende [ReadMe](https://github.com/typicode/json-server).
 
 [Link naar de API](https://hva-cmd-meesterproef-ai.now.sh/medicines) 
+### Data
+```json
+[
+  {
+    "id": Number,
+    "registrationNumber": string,
+    "name": string,
+    "activeIngredient":string
+  }
+]
+```
 
-## Diagrams
+## Tesseract
+Gelukkig bestaan OCR al een tijdje en hebben wij kunnen experimenteren met Tesseract.js. 
+Om tesseract te gebruiken moet je dit eerst activeren.
+
+```js
+const tesseract = require('node-tesseract-ocr');
+async function imageToText(image) {
+	const config = {
+		lang: "eng",
+	}
+
+	return tesseract.recognize(image, config)
+		.then(text => text)
+		.catch(error => {
+			console.log(error.message)
+		})
+}
+```
+Deze tesseract draait op de server
+
+
+## Diagrammen
 
 ### Actordiagram
 ![actor](https://i.imgur.com/wyqiLwB.png)
