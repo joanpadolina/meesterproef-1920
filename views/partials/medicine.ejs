@@ -1,0 +1,12 @@
+<section class="med-detail popup">
+        <span>Medicijn naam</span>
+        <h2><%= medicine.name %></h2>
+        <span>Actieve ingredienten</span>
+        <% if(medicine.activeIngredient) {%>
+        <h3><%= medicine.activeIngredient %></h3>
+        <% }else{ %>
+        <h3>Geen actieve stoffen gevonden</h3>
+        <% } %>
+        <span>Registratie nummer</span>
+        <p><%= medicine.registrationNumber %></p>
+</section>
