@@ -639,6 +639,47 @@ main.scan {
   top: -2em;
   position: relative; }
 
+@media (min-width: 768px) {
+  main.scan {
+    position: unset; }
+    main.scan a {
+      margin: 2em;
+      width: 20em; }
+    main.scan .container {
+      width: 50vw;
+      padding: 2em; }
+    main.scan .upload-image div {
+      height: 20em; }
+    main.scan .popup-results {
+      width: 50vw;
+      position: absolute;
+      right: 0;
+      padding: 5em;
+      background: var(--grey-300);
+      top: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      main.scan .popup-results div {
+        width: 70%;
+        top: 5em;
+        position: relative; }
+      main.scan .popup-results::after {
+        content: "";
+        background: var(--grey-300);
+        height: 100vh;
+        width: 50vw;
+        position: absolute;
+        z-index: -1; }
+    main.scan .upload-scan {
+      position: relative;
+      display: block;
+      overflow: unset;
+      line-height: 1.1em;
+      height: max-content; } }
+
 .search header {
   margin: auto;
   width: 100%;
