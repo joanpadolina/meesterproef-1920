@@ -53,14 +53,20 @@ async function getMedicineData(value) {
     const rvgResults = regexComply(value)
     const medicineNames = medicines.map(medicine => medicine.name)
     const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
+    console.log(medicine)
+    if (medicine.rating >= 0.4) {
+        const medicineData = medicines.filter(meds => {
+            return meds.name == medicine.target
+        })
+        console.log(medicineData)
+        return medicineData
+    }
     if (rvgResults) {
         const rvgData = medicines.filter(meds => meds.registrationNumber.includes(rvgResults[1]))
         return rvgData
     }
-    else if (medicine) {
-        const medicineData = medicines.filter(meds => meds.name == medicine.target)
-        return medicineData
-    } else if(undefined){
+
+    if (undefined) {
         const noValue = "No value found"
         return noValue
     }
@@ -68,11 +74,11 @@ async function getMedicineData(value) {
 
 function regexComply(stringResults) {
     const text = stringResults
-    if(text){
+    if (text) {
         const regex = /(rvg \d+(\.\d)*)|(eu \d+(\.\d)*)| (rvh \d+(\.\d)*)/gi
         const found = text.match(regex)
         return JSON.stringify(found).replace(/[\[\]"]+/g, "").split(' ')
-    }else{
+    } else {
         console.log('nothing')
         return undefined
     }
