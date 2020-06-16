@@ -31,10 +31,38 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
+
 inputFile.addEventListener('change', (e) => {
     const img = e.target.files[0];
     reader.readAsDataURL(img);
 })
+
+
+// scanBtn button starts loading
+scanBtn.addEventListener('click', (e) => {
+    setTimeout(() => {
+        loader.className += " show"
+    }, 100)
+})
+
+// animation end after content reveal
+medsSection.addEventListener('load', () => {
+    setTimeout(() => {
+        loader.className += " show"
+    }, 100)
+
+})
+
+
+if (medsSection.childElementCount >= 1) {
+    medsSection.classList.replace('meds-result', 'meds-results')
+    placeHolder.className += " container"
+    imgPlaceHolder.children[1].style.display = "none"
+} else {
+    formContainer.style.display = "none"
+}
+
+// api fetch
 
 async function imageToText(image) {
 
@@ -62,26 +90,39 @@ async function imageToText(image) {
     }
 }
 
-function regexComply(stringResults) {
-    const text = stringResults
-    const regex = /(rvg \d+(\.\d)*)|(eu \d+(\.\d)*)| (rvh \d+(\.\d)*)/gi
-    const found = text.match(regex)
-    // console.log(found)
-    return found
+async function apiFetch() {
+    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`
+    const response = await fetch(url)
+    const json = await response.json()
+    return json
 }
 
+async function getMedicineData(value) {
+    const medicines = await apiFetch()
+    const rvgResults = regexComply(value)
+    const medicineNames = medicines.map(medicine => medicine.name)
+    const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
+    if (rvgResults) {
+        const rvgData = medicines.filter(meds => meds.registrationNumber.includes(rvgResults[1]))
+        return rvgData
+    }
+    if (medicine) {
+        const medicineData = medicines.filter(meds => meds.name == medicine.target)
+        return medicineData
+    } else {
+        const noValue = "No value found"
+        return noValue
+    }
+}
 
-// scanBtn button starts loading
-scanBtn.addEventListener('click', (e) => {
-    setTimeout(() => {
-        loader.className += " show"
-    }, 400)
-})
+function regexComply(stringResults) {
+    const text = stringResults
+    if (text) {
+        const regex = /(rvg \d+(\.\d)*)|(eu \d+(\.\d)*)| (rvh \d+(\.\d)*)/gi
+        const found = text.match(regex)
+        return JSON.stringify(found).replace(/[\[\]"]+/g, "").split(' ')
+    } else {
+        console.log('nothing')
+    }
 
-// animation end after content reveal
-medsSection.addEventListener('load', () => {
-    setTimeout(() => {
-        loader.className += " show"
-    }, 1000)
-
-})
+}
