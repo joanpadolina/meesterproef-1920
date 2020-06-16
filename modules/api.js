@@ -63,13 +63,11 @@ async function getMedicineData(value) {
         const rvgData = medicines.filter(meds => meds.registrationNumber.includes(rvgResults[1]))
         return rvgData
     }
-
     if (rvgResults == null) {
         const noValue = "No value found"
         return noValue
     }
 }
-
 function regexComply(stringResults) {
     const text = stringResults
     if (text) {
@@ -80,7 +78,6 @@ function regexComply(stringResults) {
         console.log('nothing')
         return undefined
     }
-
 }
 
 module.exports = {

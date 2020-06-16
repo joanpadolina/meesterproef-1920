@@ -2,7 +2,7 @@ console.log('welcome to the clientside')
 
 // document query
 const medsSection = document.querySelector('.index')
-const uploadBtn = document.querySelector('.upload')
+const scanBtn = document.querySelector('.upload')
 const inputFile = document.querySelector('#file')
 const loader = document.querySelector('.loading-state')
 const placeHolder = document.querySelector('.place-holder')
@@ -10,6 +10,7 @@ const imgPlaceHolder = document.querySelector('.imageplaceholder')
 const formContainer = document.querySelector('.form-container')
 const nav = document.querySelector('nav')
 const imgSrc = document.querySelector('.placeholder-check')
+const inputBtn = document.querySelector('.inputfile')
 
 window.addEventListener('scroll', e => {
     if (window.scrollY >= 45) {
@@ -30,45 +31,26 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
-
-
-async function imageToText(image) {
-    const worker = Tesseract.createWorker({
-        logger: m => console.log(m.progress)
-    });
-    Tesseract.setLogging(true);
-    work();
-
-    async function work() {
-        await worker.load();
-        await worker.loadLanguage('eng');
-        await worker.initialize('eng');
-        let result = await worker.detect(image);
-        // console.log(result.data);
-        result = await worker.recognize(image);
-
-        try {
-            const renderedText = result.data.text
-            const data = await getMedicineData(renderedText)
-            console.log(data)
-        } catch (error) {
-            console.log(error)
-            imageToText(worker)
-        }
-        await worker.terminate();
-    }
-}
-
-
 inputFile.addEventListener('change', (e) => {
+    console.log(inputFile)
     const img = e.target.files[0];
-    const test = imageToText(img)
-    console.log(test)
+    changeActivityBtn()
     reader.readAsDataURL(img);
 })
-
-// uploadBtn button starts loading
-uploadBtn.addEventListener('click', (e) => {
+function changeActivityBtn(){
+    if(inputFile.files.length <= 0){
+        scanBtn.disabled = true
+        scanBtn.innerHTML = "selecteer een foto"
+    }
+    else{
+        scanBtn.disabled = false
+        scanBtn.classList.add('scanBtn-active')
+        scanBtn.innerHTML = "scan mijn foto"
+    }
+}
+changeActivityBtn()
+// scanBtn button starts loading
+scanBtn.addEventListener('click', (e) => {
     setTimeout(() => {
         loader.className += " show"
     }, 100)
@@ -92,6 +74,32 @@ if (medsSection.childElementCount >= 1) {
 }
 
 // api fetch
+
+async function imageToText(image) {
+
+    const worker = Tesseract.createWorker({
+        logger: m => console.log(m)
+    });
+    Tesseract.setLogging(true);
+    work();
+
+    async function work() {
+        await worker.load();
+        await worker.loadLanguage('eng');
+        await worker.initialize('eng');
+
+        // let result = await worker.detect(image);
+        // console.log(result.data);
+
+        result = await worker.recognize(image);
+        console.log(result.data);
+
+        //   await worker.terminate();
+    }
+    if (text) {
+        console.log('yes')
+    }
+}
 
 async function apiFetch() {
     const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines`

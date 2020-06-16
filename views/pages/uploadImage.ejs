@@ -1,78 +1,83 @@
 <%- include('../partials/head') %>
 <nav class="nav-upload">
-        <div class="top-nav">
-            <img src="/assets/svg/udraw/meddy_single.svg" alt="">
-        </div>
-        <div class="back">
-            <a href="/"><img src="/assets/svg/icon/arrow.svg" alt=""></a>
-        </div>
-    
-    </nav>
-<main class="upload-main">
-    <header class="upload-header">
-        <h1>
-            Upload een foto van jouw medicijn
-        </h1>
-        <h2>
-            1. Upload een foto
-        </h2>
-        <p>
-            Om je medicijn te vinden, is het de bedoeling dat je een foto toe voegt van jou medicijn. De naam van de
-            medicijn moet duidelijk in beeld staan.
-        </p>
-    </header>
-    <div class="container">
+    <div class="top-nav">
+        <img src="/assets/svg/udraw/meddy_single.svg" alt="">
+    </div>
+    <div class="back">
+        <a href="/"><img src="/assets/svg/icon/arrow.svg" alt=""></a>
+    </div>
 
-        <section class="upload-image">
-            <div class="img-container">
-                <div class="loading-state">
+</nav>
+<main class="upload-main">
+    <div class="upload-post">
+        <header class="upload-header">
+            <h1>
+                Upload een foto van jouw medicijn
+            </h1>
+            <h2>
+                1. Upload een foto
+            </h2>
+            <p>
+                Om je medicijn te vinden, is het de bedoeling dat je een foto toe voegt van jou medicijn. De naam van de
+                medicijn moet duidelijk in beeld staan.
+            </p>
+        </header>
+        <div class="container">
+
+            <section class="upload-image">
+                <div class="img-container">
+                    <div class="loading-state">
+                        <div>
+                            <span class="letters">
+                                Meddy.
+                            </span>
+                            <div class="scan-line"></div>
+                        </div>
+                    </div>
+
+                    <% if(typeof image == 'string' && image) { %>
+                    <img class="placeholder-image" src="/image/<%= image %>" alt="" class="show-image">
+                    <% } else{ %>
+                    <img src="/assets/svg/udraw/undraw_folder_x4ft.svg" alt="imgfolder">
+                    <% } %>
+
                     <div>
-                        <span class="letters">
-                            Meddy.
-                        </span>
-                        <div class="scan-line"></div>
+                        <p>
+                            Voeg een foto van je medicijn toe of maak een foto
+                        </p>
                     </div>
                 </div>
+                <form id="uploadForm" action="/image/scan" method="POST" enctype="multipart/form-data">
+                    <label for="file">
+                        <input type="file" name="scanmeds" id="file" class="inputfile" />
+                        kies een foto
+                    </label>
+                </form>
+            </section>
+            <button form="uploadForm" type="submit" class="upload">medicijn scannen</button>
+            <section class="upload-scan">
 
-                <% if(typeof image == 'string' && image) { %>
-                    <img class="placeholder-image" src="/image/<%= image %>" alt="" class="show-image">
-                <% } else{ %>
-                    <img src="/assets/svg/udraw/undraw_folder_x4ft.svg" alt="imgfolder">
-                <% } %>
-
-                <div>
-                    <p>
-                        Voeg een foto van je medicijn toe of maak een foto
-                    </p>
-                </div>
-            </div>
-            <form id="uploadForm" action="/image/scan" method="POST" enctype="multipart/form-data">
-                <label for="file">
-                    <input  type="file" name="scanmeds" id="file" class="inputfile" accept="image/*"  />
-                    kies een foto
-                </label>
-            </form>
-        </section>
-        <button form="uploadForm" type="submit" class="upload">medicijn scannen</button>
-        <section class="upload-scan">
-
-            <% if( typeof text == 'string'){%>
+                <% if( typeof text == 'string'){%>
                 <h3>
                     Scan
                 </h3>
                 <p><%= text  %> </p>
-            <% } %>
-            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && !meds ){ %>
-            <span><%= text  %> </span>
-            <p>geen passende resultaat gevonden</p>
+                <% } %>
+                <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
+                <span><%= text  %> </span>
+                <p>geen passende resultaat gevonden</p>
 
+                <% } %>
+            </section>
+            <% if( typeof meds == 'object' && !meds.rating && !meds.activeIngredient == ''){%>
+            <section class="results-scan">
+                <%- include('../partials/scanner_results') %>
+            </section>
             <% } %>
-        </section>
-        <% if( typeof meds == 'object' && !meds.rating && !meds.activeIngredient == ''){%>
-        <section class="results-scan">
-            <%- include('../partials/scanner_results') %>
-        </section>
-        <% } %>
+        </div>
+    </div>
+    <div class="upload-introimg">
+        <img src="assets/svg/udraw/undraw_image_upload_wqh3.svg" alt="uploadsvg">
     </div>
 
 </main>
