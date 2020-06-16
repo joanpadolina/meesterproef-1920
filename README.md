@@ -108,8 +108,9 @@ __<details><summary> Programma van Eisen </summary>__
 
 ## API
 Dit project maakt gebruikt van de API die door Voorhoede is aangeleverd.
-De volledige documentatie over deze API is te lezen in de volgende [ReadMe](https://github.com/typicode/json-server)
-[Link naar de pure API](https://hva-cmd-meesterproef-ai.now.sh/medicines) 
+De volledige documentatie over deze API is te lezen in de volgende [ReadMe](https://github.com/typicode/json-server).
+
+[Link naar de API](https://hva-cmd-meesterproef-ai.now.sh/medicines) 
 
 ## Diagrams
 
