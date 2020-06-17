@@ -1,8 +1,10 @@
 const imageToText = require('../modules/createWorker')
 const api = require('../modules/api')
-module.exports = async (req, res) => {
+const fs = require('fs')
+
+module.exports = async (req, res) => {    
     if (req.file) {
-        if (req.file.originalname.includes('at')) {
+        if (req.file.filename.includes('at')) {
             res.render('pages/scan', {
                 image: req.file.filename,
                 text: 'No data'
@@ -39,6 +41,17 @@ module.exports = async (req, res) => {
             }
         }
         
+        fs.unlink(req.file.path, function(err) {
+            if(err && err.code == 'ENOENT') {
+                // file doens't exist
+                console.info("File doesn't exist, won't remove it.");
+            } else if (err) {
+                // other errors, e.g. maybe we don't have enough permission
+                console.error("Error occurred while trying to remove file");
+            } else {
+                console.info(`removed`);
+            }
+        });
     } else {
         res.render('pages/scan')
     }
