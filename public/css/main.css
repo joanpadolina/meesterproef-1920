@@ -727,7 +727,8 @@ main.scan {
       display: block;
       overflow: unset;
       line-height: 1.1em;
-      height: max-content; } }
+      height: max-content;
+      pointer-events: none !important; } }
 
 .search header {
   margin: auto;
