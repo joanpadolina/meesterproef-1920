@@ -591,13 +591,13 @@ main.scan {
     top: -8em;
     height: 7em;
     overflow: auto;
-    background: var(--grey-300);
+    background: var(--grey-400);
     transition: 300ms ease-in-out; }
-    main.scan .upload-scan:hover {
-      cursor: pointer; }
-    main.scan .upload-scan:active {
-      top: -14em;
-      height: 10em; }
+    main.scan .upload-scan:hover, main.scan .upload-scan:active {
+      cursor: pointer;
+      top: -13.4em;
+      height: 10em;
+      box-shadow: 0px 0px 17px -4px rgba(0, 0, 0, 0.35); }
     main.scan .upload-scan span {
       display: block;
       font-size: 1.2em;
