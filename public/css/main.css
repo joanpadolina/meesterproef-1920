@@ -522,7 +522,8 @@ form {
     background: var(--grey-100);
     height: 3em; }
     nav .top-nav {
-      background: var(--grey-100); }
+      background: var(--grey-100);
+      display: none; }
     nav a::after {
       content: "Meddy.";
       color: var(--teal-700);
