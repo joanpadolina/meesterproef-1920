@@ -8,11 +8,7 @@ module.exports = async (req, res) => {
                 text: 'No data'
             })
         }
-<<<<<<< Updated upstream
-        const image = `./tmp/${req.file.originalname}`
-=======
         const image = `./${req.file.path}`
->>>>>>> Stashed changes
         const text = await imageToText(image)
         const meds = await api.getMedicineData(text)
         try {
