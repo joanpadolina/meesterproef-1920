@@ -17,8 +17,6 @@ async function scan (req, res) {
         const image = `./uploads/${req.file.originalname}`
         const text = await imageToText(image)        
         const meds = await api.getMedicineData(text)
-        console.log(text, text.length)
-            
         // add new medicine id to history
         if (req.session.medicineScans) {
             req.session.medicineScans.push(meds[0].id)

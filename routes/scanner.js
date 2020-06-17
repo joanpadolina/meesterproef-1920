@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
                 text: 'No data'
             })
         }
-        const image = `./uploads/${req.file.originalname}`
+        const image = `./tmp/${req.file.originalname}`
         const text = await imageToText(image)
         const meds = await api.getMedicineData(text)
         try {
@@ -38,6 +38,7 @@ module.exports = async (req, res) => {
                 })
             }
         }
+        
     } else {
         res.render('pages/scan')
     }

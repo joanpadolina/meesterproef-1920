@@ -3,6 +3,8 @@ const tesseract = require('node-tesseract-ocr');
 async function imageToText(image) {
 	const config = {
 		lang: "eng",
+		oem: 1,	
+		psm: 3,
 	}
 
 	return tesseract.recognize(image, config)
