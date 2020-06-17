@@ -705,7 +705,6 @@ main.scan {
       width: 50vw;
       position: absolute;
       right: 0;
-      padding: 5em;
       background: var(--grey-300);
       top: 0;
       height: 100%;
@@ -824,6 +823,8 @@ svg path {
     top: 13em;
     border-radius: 0.5em;
     left: 1em; }
+    .med-detail h2 {
+      font-size: 1em; }
   .remove-popup {
     border: none;
     position: absolute;
