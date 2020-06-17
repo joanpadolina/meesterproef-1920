@@ -126,7 +126,7 @@ header {
     flex-wrap: wrap;
     padding: 1em;
     justify-content: center;
-    background: var(--grey-300);
+    background: var(--grey-200);
     border-radius: 1em 1em 0 0;
     top: 2em;
 
@@ -136,7 +136,7 @@ header {
 }
 
 .scan-history {
-    background: var(--grey-300);
+    background: var(--grey-200);
     padding: 1em;
     border-radius: 1em 1em 0 0;
     position: relative;
@@ -178,7 +178,7 @@ header {
 .introduction {
     margin: auto;
     text-align: center;
-
+    background: var(--grey-300);
     article {
         padding: 1em;
 
@@ -304,7 +304,9 @@ header {
         margin: 0;
         display: block;
         position: relative;
-
+        .no-history{
+            border-radius: 0em;
+        }
         .scan-history {
             border-radius: 0em;
             padding: 1em;
@@ -371,7 +373,7 @@ header {
     .introduction {
         margin: auto;
         text-align: center;
-        width: 70%;
+        // width: 70%;
 
         article {
             padding: 1em;
@@ -379,7 +381,7 @@ header {
             text-align: left;
             justify-content: center;
             align-items: center;
-            width: 70%;
+            width: 40em;
             margin: auto;
             div {
                 padding: 1em;
