@@ -521,15 +521,17 @@ form {
   nav {
     background: var(--grey-100);
     height: 3em; }
-    nav::before {
-      content: "Meddy.";
-      color: var(--teal-700);
-      position: fixed; }
     nav .top-nav {
       background: var(--grey-100);
       display: none; }
-    nav a {
-      display: none; }
+    nav a::after {
+      content: "Meddy.";
+      color: var(--teal-700);
+      position: relative;
+      transition: 400ms ease-in-out;
+      left: 2em; }
+    nav a:hover:after {
+      left: 1em; }
   main.upload-main {
     display: flex;
     justify-content: space-around;
@@ -589,13 +591,13 @@ main.scan {
     top: -8em;
     height: 7em;
     overflow: auto;
-    background: var(--grey-300);
+    background: var(--grey-400);
     transition: 300ms ease-in-out; }
-    main.scan .upload-scan:hover {
-      cursor: pointer; }
-    main.scan .upload-scan:active {
-      top: -14em;
-      height: 10em; }
+    main.scan .upload-scan:hover, main.scan .upload-scan:active {
+      cursor: pointer;
+      top: -13.4em;
+      height: 10em;
+      box-shadow: 0px 0px 17px -4px rgba(0, 0, 0, 0.35); }
     main.scan .upload-scan span {
       display: block;
       font-size: 1.2em;
@@ -639,6 +641,47 @@ main.scan {
   top: -2em;
   position: relative; }
 
+@media (min-width: 768px) {
+  main.scan {
+    position: unset; }
+    main.scan a {
+      margin: 2em;
+      width: 20em; }
+    main.scan .container {
+      width: 50vw;
+      padding: 2em; }
+    main.scan .upload-image div {
+      height: 20em; }
+    main.scan .popup-results {
+      width: 50vw;
+      position: absolute;
+      right: 0;
+      padding: 5em;
+      background: var(--grey-300);
+      top: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      main.scan .popup-results div {
+        width: 70%;
+        top: 5em;
+        position: relative; }
+      main.scan .popup-results::after {
+        content: "";
+        background: var(--grey-300);
+        height: 100vh;
+        width: 50vw;
+        position: absolute;
+        z-index: -1; }
+    main.scan .upload-scan {
+      position: relative;
+      display: block;
+      overflow: unset;
+      line-height: 1.1em;
+      height: max-content; } }
+
 .search header {
   margin: auto;
   width: 100%;
@@ -679,6 +722,71 @@ a.back-arrow {
 svg path {
   fill: var(--grey-600); }
 
+@media (min-width: 768px) {
+  nav.search-nav {
+    display: none; }
+  main.search header {
+    top: 0; }
+    main.search header h1 {
+      text-align: center; }
+    main.search header::after {
+      content: "";
+      width: 100vw;
+      background: var(--teal-400);
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1; }
+  main.search .search-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    top: 0; }
+    main.search .search-form #medicine {
+      width: 30%;
+      border: none;
+      padding: 1em;
+      border-radius: 1em; }
+    main.search .search-form::after {
+      content: "";
+      width: 100vw;
+      background: var(--teal-400);
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1; }
+  main.search .search-list {
+    background: none; }
+    main.search .search-list article {
+      width: 40%;
+      margin: 1em auto; }
+  .med-detail {
+    padding: 2em;
+    width: 24em;
+    margin: auto;
+    background: var(--grey-400);
+    position: fixed;
+    top: 13em;
+    border-radius: 0.5em;
+    left: 1em; }
+  .remove-popup {
+    border: none;
+    position: absolute;
+    right: 0.5em;
+    top: 0.2em;
+    background: none;
+    font-size: 1.7em;
+    color: var(--grey-600);
+    transition: 600ms ease-in-out; }
+    .remove-popup:hover {
+      cursor: pointer;
+      color: var(--berry-600); } }
+
 .med-detail {
   padding: 1em; }
   .med-detail span {
@@ -693,3 +801,9 @@ svg path {
   border: none;
   padding: 1em;
   border-radius: 1em; }
+
+@media (min-width: 768px) {
+  .med-detail {
+    padding: 1em;
+    width: 20em;
+    margin: auto; } }

@@ -11,6 +11,10 @@ const formContainer = document.querySelector('.form-container')
 const nav = document.querySelector('nav')
 const imgSrc = document.querySelector('.placeholder-check')
 const inputBtn = document.querySelector('.inputfile')
+const links = document.querySelectorAll('.search-list a')
+const searchList = document.querySelector('.search-list')
+const popUp = document.querySelector('.med-detail')
+const popUpBtn = document.querySelector('.remove-popup')
 
 window.addEventListener('scroll', e => {
     if (window.scrollY >= 45) {
@@ -31,50 +35,53 @@ reader.onload = e => {
 }
 // https://medium.com/@KeithAlpichi/vanilla-js-building-an-image-selector-and-image-previewer-151cddc939e
 
-inputFile.addEventListener('change', (e) => {
-    console.log(inputFile)
-    const img = e.target.files[0];
+if (inputFile) {
+    inputFile.addEventListener('change', (e) => {
+        console.log(inputFile)
+        const img = e.target.files[0];
+        changeActivityBtn()
+        reader.readAsDataURL(img);
+    })
+
+    function changeActivityBtn() {
+        if (inputFile.files.length <= 0) {
+            scanBtn.disabled = true
+            scanBtn.innerHTML = "selecteer een foto"
+        } else {
+            scanBtn.disabled = false
+            scanBtn.classList.add('scanBtn-active')
+            scanBtn.innerHTML = "scan mijn foto"
+        }
+    }
+
     changeActivityBtn()
-    reader.readAsDataURL(img);
-})
-function changeActivityBtn(){
-    if(inputFile.files.length <= 0){
-        scanBtn.disabled = true
-        scanBtn.innerHTML = "selecteer een foto"
-    }
-    else{
-        scanBtn.disabled = false
-        scanBtn.classList.add('scanBtn-active')
-        scanBtn.innerHTML = "scan mijn foto"
+
+    // scanBtn button starts loading
+    scanBtn.addEventListener('click', (e) => {
+        setTimeout(() => {
+            loader.className += " show"
+        }, 100)
+    })
+
+    if(medsSection) {
+        // animation end after content reveal
+        medsSection.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.className += " show"
+            }, 100)
+
+        })
+    
+        if (medsSection.childElementCount >= 1) {
+            medsSection.classList.replace('meds-result', 'meds-results')
+            placeHolder.className += " container"
+            imgPlaceHolder.children[1].style.display = "none"
+        } else {
+            formContainer.style.display = "none"
+        }
     }
 }
-changeActivityBtn()
-// scanBtn button starts loading
-scanBtn.addEventListener('click', (e) => {
-    setTimeout(() => {
-        loader.className += " show"
-    }, 100)
-})
-
-// animation end after content reveal
-medsSection.addEventListener('load', () => {
-    setTimeout(() => {
-        loader.className += " show"
-    }, 100)
-
-})
-
-
-if (medsSection.childElementCount >= 1) {
-    medsSection.classList.replace('meds-result', 'meds-results')
-    placeHolder.className += " container"
-    imgPlaceHolder.children[1].style.display = "none"
-} else {
-    formContainer.style.display = "none"
-}
-
 // api fetch
-
 async function imageToText(image) {
 
     const worker = Tesseract.createWorker({
@@ -137,3 +144,23 @@ function regexComply(stringResults) {
     }
 
 }
+
+// medicine detail popup, generated server sided
+async function popup(event) {
+    const popup = document.querySelector('.popup')
+    event.preventDefault();
+    
+    if (popup) {
+        popup.remove();
+    }
+
+    const url = event.target.href.split('medicine/').join('')
+    const response = await fetch(url);
+    const medicine = await response.text();
+
+    searchList.insertAdjacentHTML('afterend', medicine);
+}
+
+links.forEach(link => {
+    link.addEventListener('click', popup)
+})

@@ -11,7 +11,7 @@ async function fetch() {
 }
 
 async function fetchOne(id) {
-    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines?q=${id}`
+    const url = `https://hva-cmd-meesterproef-ai.now.sh/medicines/${id}`
     const response = await nodeFetch(url)
     const json = await response.json()
     return json
@@ -35,7 +35,7 @@ async function searchResultLimit(value) {
 // find one medicine by id
 async function getMedicine(value) {
     const medicine = await fetchOne(value);
-    return medicine[0]
+    return medicine
 }
 
 // find multiple medicines by id
@@ -51,7 +51,6 @@ async function getMedicineData(value) {
     const rvgResults = regexComply(value)
     const medicineNames = medicines.map(medicine => medicine.name)
     const medicine = stringSimilarity.findBestMatch(value, medicineNames).bestMatch
-    console.log(medicine, value, rvgResults)
 
     if (medicine.rating >= 0.4) {
         const medicineData = medicines.filter(meds => {

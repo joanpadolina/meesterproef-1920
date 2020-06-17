@@ -186,19 +186,22 @@ form {
         background: var(--grey-100);
         height: 3em;
 
-        &::before {
-            content: "Meddy.";
-            color: var(--teal-700);
-            position: fixed;
-        }
-
         .top-nav {
             background: var(--grey-100);
             display: none;
         }
 
         a {
-            display: none;
+            &::after {
+                content: "Meddy.";
+                color: var(--teal-700);
+                position: relative;
+                transition: 400ms ease-in-out;
+                left: 2em;
+            }
+            &:hover:after{
+                left:1em;
+            }
         }
     }
 

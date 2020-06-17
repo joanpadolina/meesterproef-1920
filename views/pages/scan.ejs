@@ -9,11 +9,12 @@
 
 </nav>
 <main class="scan">
-    <header class="upload-header">
-        <h1>Upload een foto van jouw medicijn</h1>
-        <h2>2. Medicijn scannen</h2>
-    </header>
+
     <div class="container">
+        <header class="upload-header">
+            <h1>Upload een foto van jouw medicijn</h1>
+            <h2>2. Medicijn scannen</h2>
+        </header>
         <section class="upload-image">
             <div>
                 <div class="loading-state">
@@ -34,27 +35,29 @@
         </section>
     </div>
     <div class="popup-results">
-        <section class="upload-scan">
+        <div>
+            <section class="upload-scan">
 
-            <% if( typeof text == 'string'){%>
-           
-            <p>
-                <span>Gescande tekst</span>
-                <%= text  %>
-            </p>
+                <% if( typeof text == 'string'){%>
+
+                <p>
+                    <span>Gescande tekst</span>
+                    <%= text  %>
+                </p>
+                <% } %>
+                <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
+                <span><%= text  %> </span>
+                <p>geen passende resultaat gevonden</p>
+                <% } %>
+
+            </section>
+
+            <% if( typeof meds == 'object' && !meds.rating && !meds.activeIngredient == ''){%>
+            <section class="results-scan">
+                <%- include('../partials/scanner_results') %>
+            </section>
             <% } %>
-            <% if(typeof text == 'string' && text.length <= 3 || typeof meds == 'object' && meds.rating < 0.3 ){ %>
-            <span><%= text  %> </span>
-            <p>geen passende resultaat gevonden</p>
-            <% } %>
-
-        </section>
-
-        <% if( typeof meds == 'object' && !meds.rating && !meds.activeIngredient == ''){%>
-        <section class="results-scan">
-            <%- include('../partials/scanner_results') %>
-        </section>
-        <% } %>
+        </div>
     </div>
     <a href="/image-upload">kies een andere foto</a>
 
