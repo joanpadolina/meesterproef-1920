@@ -4,11 +4,15 @@ module.exports = async (req, res) => {
     if (req.file) {
         if (req.file.originalname.includes('at')) {
             res.render('pages/scan', {
-                image: req.file.originalname,
+                image: req.file.filename,
                 text: 'No data'
             })
         }
+<<<<<<< Updated upstream
         const image = `./tmp/${req.file.originalname}`
+=======
+        const image = `./${req.file.path}`
+>>>>>>> Stashed changes
         const text = await imageToText(image)
         const meds = await api.getMedicineData(text)
         try {
@@ -19,14 +23,14 @@ module.exports = async (req, res) => {
                 res.render('pages/scan', {
                     text: text,
                     meds: meds[0],
-                    image: req.file.originalname
+                    image: req.file.filename
                 })
             } else {
                 req.session.medicineScans.push(meds[0].id)
                 res.render('pages/scan', {
                     text: text,
                     meds: meds[0],
-                    image: req.file.originalname
+                    image: req.file.filename
                 })
             }
         } catch {
@@ -34,7 +38,7 @@ module.exports = async (req, res) => {
             if (!meds[0] || !meds[0].id) {
                 res.render('pages/scan', {
                     text: text,
-                    image: req.file.originalname
+                    image: req.file.filename
                 })
             }
         }
