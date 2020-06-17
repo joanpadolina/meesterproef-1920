@@ -20,10 +20,12 @@ header.index-header::after {
 .desktop-nav {
     display: none;
 }
-.desktop-history{
+
+.desktop-history {
     display: none;
 }
-.mobile-histoy{
+
+.mobile-histoy {
     display: block;
 }
 
@@ -111,8 +113,9 @@ header {
     position: absolute;
     bottom: 0;
     z-index: 1;
-    img{
-        width:10em;
+
+    img {
+        width: 10em;
     }
 }
 
@@ -123,9 +126,9 @@ header {
     flex-wrap: wrap;
     padding: 1em;
     justify-content: center;
-    background: var(--grey-200);
+    background: var(--grey-300);
     border-radius: 1em 1em 0 0;
-    top: 1em;
+    top: 2em;
 
     img {
         width: 17em;
@@ -133,7 +136,7 @@ header {
 }
 
 .scan-history {
-    background: var(--grey-200);
+    background: var(--grey-300);
     padding: 1em;
     border-radius: 1em 1em 0 0;
     position: relative;
@@ -175,11 +178,14 @@ header {
 .introduction {
     margin: auto;
     text-align: center;
+
     article {
         padding: 1em;
-        img{
-            width:80%;
+
+        img {
+            width: 80%;
         }
+
         &::after {
             content: "";
             width: 40%;
@@ -237,9 +243,10 @@ header {
 @media (min-width: 768px) {
     header.index-header {
         // background: var(--teal-200);
-        background:none;
+        background: none;
         padding: 3em;
         height: 50vh;
+
         &::after {
             content: "";
             width: 50vw;
@@ -251,6 +258,7 @@ header {
             right: 0;
         }
     }
+
     header img.meddy-logo {
         width: 20vw;
         opacity: .5;
@@ -275,28 +283,34 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+
         div {
             width: 25em;
         }
     }
+
     // .hide-main{
     //     display:none;
     // }
-    .desktop-history{
+    .desktop-history {
         display: block;
     }
-    .mobile-history{
+
+    .mobile-history {
         display: none;
     }
+
     main.index {
-            margin: 0;
-            display: block;
-            position: relative;
+        margin: 0;
+        display: block;
+        position: relative;
+
         .scan-history {
-                border-radius: 0em;
-                padding: 1em;
-                position: relative;
-                top: 0em;
+            border-radius: 0em;
+            padding: 1em;
+            position: relative;
+            top: 0em;
+
             article {
                 background: var(--grey-000);
                 border-radius: 0.3em;
@@ -321,11 +335,11 @@ header {
         width: 50%;
 
         div {
-                background: none;
-                width: 25em;
-                padding: 2em;
-                color: var(--grey-700);
-                position: absolute;
+            background: none;
+            width: 25em;
+            padding: 2em;
+            color: var(--grey-700);
+            position: absolute;
 
             img {
                 object-fit: contain;
@@ -338,6 +352,7 @@ header {
     .button-container {
         justify-content: start;
         flex-wrap: nowrap;
+
         a {
             color: var(--grey-100);
             background: var(--teal-600);
@@ -349,6 +364,46 @@ header {
                 margin-left: 2em;
             }
         }
+    }
+
+    // introduction
+
+    .introduction {
+        margin: auto;
+        text-align: center;
+        width: 70%;
+
+        article {
+            padding: 1em;
+            display: flex;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            margin: auto;
+            div {
+                padding: 1em;
+            }
+            img {
+                width: 30em;
+            }
+
+            &:nth-of-type(2n+1) {
+                left: -3em;
+                position: relative;
+            }
+
+            &::after {
+                content: "";
+                width: 40%;
+                height: 0.2em;
+                background: var(--grey-400);
+                position: relative;
+                display: none;
+                margin: 1.6em auto;
+            }
+        }
+
     }
 }
 

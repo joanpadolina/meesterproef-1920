@@ -247,14 +247,14 @@ header {
   flex-wrap: wrap;
   padding: 1em;
   justify-content: center;
-  background: var(--grey-200);
+  background: var(--grey-300);
   border-radius: 1em 1em 0 0;
-  top: 1em; }
+  top: 2em; }
   .no-history img {
     width: 17em; }
 
 .scan-history {
-  background: var(--grey-200);
+  background: var(--grey-300);
   padding: 1em;
   border-radius: 1em 1em 0 0;
   position: relative;
@@ -397,7 +397,34 @@ header {
         background: none;
         color: var(--teal-800);
         border: var(--teal-600) solid 0.1em;
-        margin-left: 2em; } }
+        margin-left: 2em; }
+  .introduction {
+    margin: auto;
+    text-align: center;
+    width: 70%; }
+    .introduction article {
+      padding: 1em;
+      display: flex;
+      text-align: left;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      margin: auto; }
+      .introduction article div {
+        padding: 1em; }
+      .introduction article img {
+        width: 30em; }
+      .introduction article:nth-of-type(2n+1) {
+        left: -3em;
+        position: relative; }
+      .introduction article::after {
+        content: "";
+        width: 40%;
+        height: 0.2em;
+        background: var(--grey-400);
+        position: relative;
+        display: none;
+        margin: 1.6em auto; } }
 
 main.upload-main {
   margin: auto;
