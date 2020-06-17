@@ -521,19 +521,16 @@ form {
   nav {
     background: var(--grey-100);
     height: 3em; }
-    nav::before {
+    nav .top-nav {
+      background: var(--grey-100); }
+    nav a::after {
       content: "Meddy.";
       color: var(--teal-700);
-      position: fixed;
-      transition: 400ms ease-in-out; }
-    nav:hover::before {
-      cursor: pointer;
-      font-weight: 800; }
-    nav .top-nav {
-      background: var(--grey-100);
-      display: none; }
-    nav a {
-      display: none; }
+      position: relative;
+      transition: 400ms ease-in-out;
+      left: 2em; }
+    nav a:hover:after {
+      left: 1em; }
   main.upload-main {
     display: flex;
     justify-content: space-around;
