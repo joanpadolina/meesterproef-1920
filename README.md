@@ -8,7 +8,7 @@ Een webapplicatie die medicijn gebruikers helpt om de juiste informatie te verkr
 ## Introductie
 Dit project is verdeeld in 3 delen:
 
-1. Design Rationale // __[Readme (u bevindt zich hier)](https://github.com/joanpadolina/meesterproef-1920)__
+1. Design Rationale // __[Readme (u bevindt zich hier)](https://github.com/joanpadolina/meesterproef-1920/blob/development/README.md)__
 1. Product biografie // __[Joan Padolina](https://github.com/joanpadolina/meesterproef-1920/wiki)__
 1. Product biografie // __[Lien Vo](https://github.com/nlvo/meesterproef-1920/wiki)__
 
