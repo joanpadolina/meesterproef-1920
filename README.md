@@ -299,15 +299,13 @@ memoryStorage, hierbij kun je tijdelijk bestanden bijhouden
 
 </details>
 
-### Conclusie
+#### Samenvatting
 
 In eerste instantie was de keuze tussen local storage en cookies, maar tijdens het onderzoeken kwam dus sessions erbij. Local storage viel al gauw af, we renderen op dit moment de pagina's server side. 
 
 Uiteindelijk is er gekozen voor sessions, omdat het vrij gevoelige data is waar we mee werken wouden we dat niet ergens opslaan. De sessions worden dus niet op de server opgeslagen, maar in de browser van de gebruiker en verwijderd op het moment dat ze hun browser afsluiten. Wat ervoor zorgt dat wij niks hoeven bij te houden van de gebruiker.
 
-__Foto's__
-
-Het werd al gauw duidelijk dat memory storage de beste keuze was voor wat wij willen bereiken. Alleen liepen we tegen het probleem aan dat node-tesseract-ocr geen base64 string kon lezen. Tesseract.js kon dat wel en met wat extra tijd zouden we hier meer in kunnen verdiepen.
+Daarnaast hebben we ook gekeken naar foto’s hier werd al gauw duidelijk dat memory storage de beste keuze was voor wat wij willen bereiken. Alleen liepen we tegen het probleem aan dat node-tesseract-ocr geen base64 string kon lezen. Tesseract.js kon dat wel en met wat extra tijd zouden we hier meer in kunnen verdiepen.
 
 ## Wensen
 
@@ -324,7 +322,8 @@ Als laatste zouden we graag de applicatie slimmer maken door het sneller te late
 
 Het project heeft zijn goede en slechte kanten, zo hebben wij snel OCR kunnen toepassen en hebben wij op een andere manier onszelf uitgedaagd. Door te focussen op de interface en gebruikers op verschillende manieren te helpen om de juiste medicijn te verkrijgen.
 Dit prototype heeft veel gekeken naar betrouwbaarheid maar ook hoe oogt op de gebruikers op verschillende devices. Omdat de content minimaal was konden wij veel invullen op onze eigen manier. De opdracht was alleen ervoor zorgen dan de gebruiker door middel van OCR de juiste medicijn konden krijgen.
-Er zijn nog veel onderwerpen waar wij graag in hebben gedoken zoals, privacy en snelheid van de applicatie. Wij hebben het allemaal in de server laten draaien maar hadden natuurlijk ook via de browser laten lopen.
+Er zijn nog veel onderwerpen waar wij graag in hebben gedoken zoals, privacy en snelheid van de applicatie. Wij hebben het allemaal in de server laten draaien maar hadden natuurlijk ook via de browser willen laten lopen. 
+Desalniettemin had dit project een doel om gebruikers te helpen met het vinden van hun medicijn met een  met een betrouwbare interface als hoofddoel.
 
 
 
