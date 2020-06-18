@@ -1,7 +1,7 @@
 ![mockumeddyapp](https://user-images.githubusercontent.com/8554238/85066026-74c95980-b1ae-11ea-9f1a-e2b4ca9e08f3.png)
 
 # Medicine scanner
-Een webapplicatie die medicijn gebruikers helpt op de juiste informatie te verkrijven over hun medicijn. Met het gebruikt van nieuwe technologie als "Optical Character Recognition" oftewel OCR kunnen gebruikers simpel weg een foto uploaden en hierbij de juiste data binnen halen. Door op de juiste en betrouwbare manier data op te halen uit de medicijn-api, geproduceerd door de Voorhoede, is de applicatie voor iedereen toegankelijk.
+Een webapplicatie die medicijn gebruikers helpt om de juiste informatie te verkrijgen over hun medicijn. Met het gebruik "Optical Character Recognition" oftewel OCR kunnen gebruikers simpel weg een foto uploaden en hierbij de juiste data binnen halen. Door op de juiste en betrouwbare manier data op te halen uit de medicijn-api, geproduceerd door de Voorhoede, is de applicatie voor iedereen toegankelijk.
 
 © [Joan Padolina](www.github.com/joanpadolina) & [Lien Vo](www.github.com/nlvo)
 
@@ -329,6 +329,8 @@ Er zijn nog veel onderwerpen waar wij graag in hebben gedoken zoals, privacy en 
 ## Source
 * [Tesseract](https://github.com/tesseract-ocr/)
 * [Stackoverflow](http://stackoverflow.com/)
+* [Feather open source icons](https://feathericons.com/)
+* [Undraw](https://undraw.co/illustrations)
 
 ## Credits
 * [Damian](https://github.com/damian1997) // Multiple help on tesseract problems
