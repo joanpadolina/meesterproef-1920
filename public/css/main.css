@@ -705,7 +705,7 @@ main.scan {
       width: 50vw;
       position: absolute;
       right: 0;
-      background: var(--grey-300);
+      padding: 5em;
       top: 0;
       height: 100%;
       display: flex;
@@ -818,9 +818,6 @@ svg path {
     padding: 2em;
     width: 24em;
     margin: auto;
-    background: var(--grey-400);
-    position: fixed;
-    top: 13em;
     border-radius: 0.5em;
     left: 1em; }
     .med-detail h2 {
