@@ -706,7 +706,6 @@ main.scan {
       position: absolute;
       right: 0;
       padding: 5em;
-      background: var(--grey-300);
       top: 0;
       height: 100%;
       display: flex;
@@ -819,9 +818,6 @@ svg path {
     padding: 2em;
     width: 24em;
     margin: auto;
-    background: var(--grey-400);
-    position: fixed;
-    top: 13em;
     border-radius: 0.5em;
     left: 1em; }
   .remove-popup {

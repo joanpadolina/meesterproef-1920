@@ -161,6 +161,6 @@ async function popup(event) {
     searchList.insertAdjacentHTML('afterend', medicine);
 }
 
-links.forEach(link => {
-    link.addEventListener('click', popup)
-})
+// links.forEach(link => {
+//     link.addEventListener('click', popup)
+// })
