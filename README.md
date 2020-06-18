@@ -322,9 +322,8 @@ Als laatste zouden we graag de applicatie slimmer maken door het sneller te late
 
 Het project heeft zijn goede en slechte kanten, zo hebben wij snel OCR kunnen toepassen en hebben wij op een andere manier onszelf uitgedaagd. Door te focussen op de interface en gebruikers op verschillende manieren te helpen om de juiste medicijn te verkrijgen.
 Dit prototype heeft veel gekeken naar betrouwbaarheid maar ook hoe oogt op de gebruikers op verschillende devices. Omdat de content minimaal was konden wij veel invullen op onze eigen manier. De opdracht was alleen ervoor zorgen dan de gebruiker door middel van OCR de juiste medicijn konden krijgen.
-Er zijn nog veel onderwerpen waar wij graag in hebben gedoken zoals, privacy en snelheid van de applicatie. Wij hebben het allemaal in de server laten draaien maar hadden natuurlijk ook via de browser willen laten lopen. 
-Desalniettemin had dit project een doel om gebruikers te helpen met het vinden van hun medicijn met een  met een betrouwbare interface als hoofddoel.
-
+Er zijn nog veel onderwerpen waar wij graag dieper in hadden willen duiken zoals, privacy en snelheid van de applicatie. Wij hebben het allemaal in de server laten draaien maar het had ook via die browser kunnen lopen.  
+Desalniettemin had dit project een doel om gebruikers te helpen met het vinden van hun medicijn en vooral met een betrouwbare interface. We hebben daarom ons doel en de criteria van het project niet opzij gezet en hebben onszelf ondertussen genoeg uitgedaagd in het project.
 
 
 ## Source
