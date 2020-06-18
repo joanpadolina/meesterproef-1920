@@ -13,7 +13,14 @@ main.index {
 .desktop-history {
     display: none;
 }
-
+header.index-header::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--teal-400);
+    z-index: -1;
+}
 .mobile-histoy {
     display: block;
 }
@@ -32,14 +39,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    &::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: var(--teal-400);
-        z-index: -1;
-    }
+
 
     h2 {
         font-size: 1em;
