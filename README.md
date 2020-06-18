@@ -261,7 +261,7 @@ Dit project maakt gebruik van verschillende dependencies om tot een geheel te ko
 * Session // Opslaan van medicijnen na het scannen
 
 ### Privacy
-<details> <summary>__Lees hier__</summary>
+<details> <summary>__Lees volledig onderzoek__</summary>
 	
 Naar aanleiding van de discussie over privacy aan het eind van het vorige blok met real time web, was dit project het perfecte project waar we dit kunnen toepassen. We hebben hier namelijk te maken met gevoelige data.
 
