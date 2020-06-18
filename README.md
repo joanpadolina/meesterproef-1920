@@ -5,7 +5,7 @@ Een webapplicatie die medicijn gebruikers helpt om de juiste informatie te verkr
 
 © [Joan Padolina](www.github.com/joanpadolina) & [Lien Vo](www.github.com/nlvo)
 
-## Introducion
+## Introductie
 Dit project is verdeeld in 3 delen:
 
 1. Design Rationale // __[Readme (u bevindt zich hier)](https://github.com/joanpadolina/meesterproef-1920)__
