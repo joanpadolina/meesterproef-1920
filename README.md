@@ -292,20 +292,22 @@ extra bronnen:
 * [Verschil tussen cache en cookies - techblogout](https://medium.com/techblogout/whats-the-difference-between-cache-and-cookies-53e7f4f094bb)
 * [cache en local storage - quora](https://www.quora.com/Should-I-use-localStorage-to-cache-assets)
 
-#### Conclusie
-In eerste instantie was de keuze tussen local storage en cookies, maar tijdens het onderzoeken kwam dus sessions erbij. Local storage viel al gauw af, we renderen op dit moment de pagina's server side. 
-
-Uiteindelijk is er gekozen voor sessions, omdat het vrij gevoelige data is waar we mee werken wouden we dat niet ergens opslaan. De sessions worden dus niet op de server opgeslagen, maar in de browser van de gebruiker en verwijderd op het moment dat ze hun browser afsluiten. Wat ervoor zorgt dat wij niks hoeven bij te houden van de gebruiker.
-
 #### Foto’s
 Naast het opslaan van de informatie over de gescande medicijn hebben we ook onderzocht op welke manier we dit het beste konden doen. Een paar manieren die we tegenkwamen waren: 
 tmp (temporarly) map, waar we tijdelijk foto’s bijhouden en vervolgens verwijderen.
 memoryStorage, hierbij kun je tijdelijk bestanden bijhouden
 
-
-##### Conclusie
-Het werd al gauw duidelijk dat memory storage de beste keuze was voor wat wij willen bereiken. Alleen liepen we tegen het probleem aan dat node-tesseract-ocr geen base64 string kon lezen. Tesseract.js kon dat wel en met wat extra tijd zouden we hier meer in kunnen verdiepen.
 </details>
+
+### Conclusie
+
+In eerste instantie was de keuze tussen local storage en cookies, maar tijdens het onderzoeken kwam dus sessions erbij. Local storage viel al gauw af, we renderen op dit moment de pagina's server side. 
+
+Uiteindelijk is er gekozen voor sessions, omdat het vrij gevoelige data is waar we mee werken wouden we dat niet ergens opslaan. De sessions worden dus niet op de server opgeslagen, maar in de browser van de gebruiker en verwijderd op het moment dat ze hun browser afsluiten. Wat ervoor zorgt dat wij niks hoeven bij te houden van de gebruiker.
+
+__Foto's__
+
+Het werd al gauw duidelijk dat memory storage de beste keuze was voor wat wij willen bereiken. Alleen liepen we tegen het probleem aan dat node-tesseract-ocr geen base64 string kon lezen. Tesseract.js kon dat wel en met wat extra tijd zouden we hier meer in kunnen verdiepen.
 
 ## Wensen
 
