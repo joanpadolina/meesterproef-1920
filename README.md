@@ -190,7 +190,9 @@ Omdat de application werkt met medicijnen wilden we niet het gevoel wekken van z
 
 Naast dat het een vorm van een hart heeft, is het ook een pil die geopend is met het idee dat je informatie uit de medicijn haalt. En gebruikers dus informatie over hun medicijn kunnen verkrijgen op een betrouwbare en vriendelijke manier.
 
-#### Applicatie
+#### Mobile first
+
+De applicatie is zo ontworpen om onderweg gebruikt te kunnen maken van de medicijn scanner. Zo zorgt Meddy ervoor dat de gebruiker niet langer hoeft te wachten op bepaalde informatie. 
 
 Voor het project medicijn scanner hadden wij een aantal ideeën waaronder:
 * Live scanning
